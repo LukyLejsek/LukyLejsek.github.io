@@ -8,7 +8,7 @@
     @media (prefer-color-scheme: dark) {
         path {
             fill: white;
-            opacity: 0.5;
+            opacity: 0.1;
         }
     }
     </style>
