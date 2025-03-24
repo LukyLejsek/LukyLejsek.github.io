@@ -23,7 +23,7 @@ div.telo {
 }
 
 link[rel="icon"] {
-    mask-image: url("favicon.svg");
-    -webkit-mask-image: url("favicon.svg");
+    mask-image: url("images/terminal_128dp_E3E3E3_FILL0_wght500_GRAD200_opsz48.svg");
+    -webkit-mask-image: url("images/terminal_128dp_E3E3E3_FILL0_wght500_GRAD200_opsz48.svg");
     background-color: currentColor;
     }
