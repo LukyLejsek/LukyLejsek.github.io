@@ -9,3 +9,15 @@ div.telo {
     background-color: rgb(34, 34, 34);
     color: aliceblue;
 }
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        color: white; /* Bílé ikonky v tmavém režimu */
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color: black; /* Černé ikonky ve světlém režimu */
+    }
+}
