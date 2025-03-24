@@ -12,12 +12,18 @@ div.telo {
 
 @media (prefers-color-scheme: dark) {
     :root {
-        color: white; /* Bílé ikonky v tmavém režimu */
+        color: white;
     }
 }
 
 @media (prefers-color-scheme: light) {
     :root {
-        color: black; /* Černé ikonky ve světlém režimu */
+        color: black;
     }
 }
+
+link[rel="icon"] {
+    mask-image: url("favicon.svg");
+    -webkit-mask-image: url("favicon.svg");
+    background-color: currentColor;
+    }
