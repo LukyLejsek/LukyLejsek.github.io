@@ -10,20 +10,3 @@ div.telo {
     color: aliceblue;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        color: white;
-    }
-}
-
-@media (prefers-color-scheme: light) {
-    :root {
-        color: black;
-    }
-}
-
-link[rel="icon"] {
-    mask-image: url("images/terminal_128dp_E3E3E3_FILL0_wght500_GRAD200_opsz48.svg");
-    -webkit-mask-image: url("images/terminal_128dp_E3E3E3_FILL0_wght500_GRAD200_opsz48.svg");
-    background-color: currentColor;
-    }
