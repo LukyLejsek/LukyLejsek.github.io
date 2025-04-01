@@ -18,7 +18,7 @@ div.telo {
     align-items: center;
     height: 100vh;
     margin: 0px;
-    background-color: rgb(65, 65, 65);
+    background-color: rgb(54, 54, 54);
 }
 
 .container-kosticky {
@@ -26,6 +26,7 @@ div.telo {
     flex-wrap: wrap;
     justify-content: space-evenly;
     gap: 20px;
+    max-width: 750px;
 }
 
 .kosticka {
@@ -35,6 +36,7 @@ div.telo {
     text-align: center;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
     color: rgb(25, 56, 102);
+    background-color: rgb(65, 63, 63);
     transition: box-shadow 0.3s ease;
 }
 
