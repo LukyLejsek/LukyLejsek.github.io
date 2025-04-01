@@ -6,7 +6,42 @@
 div.telo {
     padding: 10px;
     height: 100vh;
-    background-color: rgb(247, 193, 193);
-    color: rgb(65, 67, 68);
+    background-color: rgb(54, 54, 54);
+    color: rgb(208, 228, 238);
 }
 
+
+
+.kosticky {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0px;
+    background-color: rgb(65, 65, 65);
+}
+
+.container-kosticky {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.kosticka {
+    height: 200px;
+    width: 200px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+    color: rgb(25, 56, 102);
+    transition: box-shadow 0.3s ease;
+}
+
+.kosticka:hover {
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}
+
+.kosticka > * {
+    pointer-events: none;
+}
