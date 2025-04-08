@@ -48,3 +48,12 @@ div.telo {
 .kosticka > * {
     pointer-events: none;
 }
+
+/* Mobile devices */
+@media screen and (max-width: 1118px) {
+    .kosticka{
+        height: 50px;
+        width: 50px;
+        border-radius: 5px;
+    }
+}
