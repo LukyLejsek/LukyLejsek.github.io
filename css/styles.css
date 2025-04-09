@@ -53,8 +53,12 @@ div.telo {
 /* Mobile devices */
 @media screen and (max-width: 1118px) {
     .kosticka{
-        height: 50px;
-        width: 50px;
-        border-radius: 5px;
+        height: 100px;
+        width: 100px;
+        border-radius: 7px;
+    }
+
+    .container-kosticky{
+        max-width: 380px;
     }
 }
