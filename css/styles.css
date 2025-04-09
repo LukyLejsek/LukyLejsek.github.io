@@ -47,7 +47,7 @@ div.telo {
 }
 
 .kosticka > * {
-    pointer-events: none;
+    pointer-events: all;
 }
 
 /* Mobile devices */
