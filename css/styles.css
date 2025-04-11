@@ -70,7 +70,9 @@ nav {
     height: 50px;
 }
 
-.top-nav {}
+.top-nav {
+    align-items: center;
+}
 
 .ul-top-nav {
     display: flex;
@@ -83,7 +85,7 @@ nav {
     align-items: center;
 }
 
-li.nav {
+li.nav a {
     padding: 5px 10px;
     border-radius: 3px;
 }
