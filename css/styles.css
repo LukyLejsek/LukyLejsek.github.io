@@ -85,6 +85,7 @@ nav {
     margin-right: 100px;
     justify-content: space-evenly;
     align-items: center;
+    padding: auto;
 }
 
 li.nav a {
