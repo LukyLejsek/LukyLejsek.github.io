@@ -68,10 +68,10 @@ div.telo {
 /* Navigace */
 nav {
     height: 50px;
+    align-items: center;
 }
 
 .top-nav {
-    display: flex;
     align-items: center;
 }
 
