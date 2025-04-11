@@ -64,3 +64,12 @@ div.telo {
         margin: 10px;
     }
 }
+
+/* Navigace */
+nav {
+    height: 50px;
+}
+
+.top-nav {
+display: flex;
+}
