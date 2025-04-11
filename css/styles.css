@@ -72,7 +72,8 @@ nav {
 }
 
 .top-nav {
-    align-items: center;
+    justify-content: center;
+  align-items: center;
 }
 
 .ul-top-nav {
