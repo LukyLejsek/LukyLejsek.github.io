@@ -46,19 +46,19 @@ div.telo {
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
 }
 
-.kosticka > * {
+.kosticka>* {
     pointer-events: all;
 }
 
 /* Mobile devices */
 @media screen and (max-width: 1118px) {
-    .kosticka{
+    .kosticka {
         height: 100px;
         width: 100px;
         border-radius: 7px;
     }
 
-    .container-kosticky{
+    .container-kosticky {
         max-width: 380px;
         gap: 10px;
         margin: 10px;
@@ -70,16 +70,20 @@ nav {
     height: 50px;
 }
 
-.top-nav {
-
-}
+.top-nav {}
 
 .ul-top-nav {
-display: flex;
-flex-direction: row;
-flex-wrap: nowrap;
-list-style-type: none;
-margin-left: 50px;
-margin-right: 100px;
-justify-content: space-evenly;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    list-style-type: none;
+    margin-left: 50px;
+    margin-right: 100px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+li.nav {
+    padding: 5px 10px;
+    border-radius: 3px;
 }
