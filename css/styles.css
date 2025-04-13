@@ -75,6 +75,7 @@ nav {
 }
 
 .ul-top-nav {
+    height: 50px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
