@@ -68,13 +68,10 @@ div.telo {
 /* Navigace */
 nav {
     height: 50px;
-    align-items: center;
 }
 
 .top-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
 }
 
 .ul-top-nav {
@@ -86,7 +83,6 @@ nav {
     margin-right: 100px;
     justify-content: space-evenly;
     align-items: center;
-    padding: auto;
 }
 
 li.nav a {
