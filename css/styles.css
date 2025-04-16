@@ -95,7 +95,7 @@ li.nav a {
     transition: 1s;
 }
 
-li.nav.active {
+li.nav .active {
     background-color: blue;
     color: white;
     transition: 1s;
