@@ -90,5 +90,14 @@ li.nav a {
     padding: 5px 10px;
     border-radius: 3px;
     background-color: rgb(186, 199, 211); 
+    text-decoration: none;
+    color: black;
+    transition: 1s;
+}
+
+li.nav.active {
+    background-color: blue;
+    color: white;
+    transition: 1s;
 }
 
