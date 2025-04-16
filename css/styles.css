@@ -89,10 +89,6 @@ nav {
 li.nav a {
     padding: 5px 10px;
     border-radius: 3px;
-}
-
-li.nav {
-    padding: 5px 10px;
-    border-radius: 3px;
     background-color: rgb(186, 199, 211); 
 }
+
