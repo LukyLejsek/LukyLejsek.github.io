@@ -70,10 +70,6 @@ nav {
     height: 50px;
 }
 
-.top-nav {
-
-}
-
 .ul-top-nav {
     height: 50px;
     display: flex;
@@ -99,5 +95,9 @@ li.active.nav a {     /* v html musi v class= byt prvni to co ma byt dulezitejsi
     background-color: blue;
     color: white;
     transition: 1s;
+}
+
+li.nav a :hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
