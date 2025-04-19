@@ -98,6 +98,6 @@ li.active.nav a {     /* v html musi v class= byt prvni to co ma byt dulezitejsi
 }
 
 li.nav a:hover {
-    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
 }
 
