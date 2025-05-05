@@ -83,6 +83,8 @@ div.telo {
     }
     #myLinks {
         display: flex;
+        list-style-type: none;
+        flex-direction: column;
     }
 }
 
@@ -109,6 +111,7 @@ nav {
     }
     #myLinks {
         display: none;
+        list-style-type: none;
     }
 }
 
