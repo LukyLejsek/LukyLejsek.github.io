@@ -5,7 +5,9 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 1em; margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1em;
+    margin: 0;
 }
 
 div.telo {
@@ -56,10 +58,11 @@ div.telo {
 
 /* Mobile devices */
 @media screen and (max-width: 1118px) {
-    .ul-top-nav{
+    .ul-top-nav {
         display: none;
     }
-    .nav-hamburger{
+
+    .nav-hamburger {
         display: flex;
     }
 
@@ -81,32 +84,35 @@ nav {
     height: 4vh;
 }
 
-.ul-top-nav {
-    height: 4vh;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    list-style-type: none;
-    margin-left: 2vw;
-    margin-right: 4vw;
-    justify-content: space-evenly;
-    align-items: center;
-}
+@media screen and (min-width: 1118px) {
+    .ul-top-nav {
+        height: 4vh;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        list-style-type: none;
+        margin-left: 2vw;
+        margin-right: 4vw;
+        justify-content: space-evenly;
+        align-items: center;
+    }
 
-.nav-hamburger{
-    display: none;
+    .nav-hamburger {
+        display: none;
+    }
 }
 
 li.nav a {
     padding: 5px 10px;
     border-radius: 3px;
-    background-color: rgb(186, 199, 211); 
+    background-color: rgb(186, 199, 211);
     text-decoration: none;
     color: black;
     transition: 1s;
 }
 
-li.active.nav a {     /* v html musi v class= byt prvni to co ma byt dulezitejsi /vic nahore*/
+li.active.nav a {
+    /* v html musi v class= byt prvni to co ma byt dulezitejsi /vic nahore*/
     background-color: blue;
     color: white;
     transition: 1s;
@@ -115,4 +121,3 @@ li.active.nav a {     /* v html musi v class= byt prvni to co ma byt dulezitejsi
 li.nav a:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
 }
-
