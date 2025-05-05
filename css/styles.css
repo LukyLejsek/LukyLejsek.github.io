@@ -56,6 +56,13 @@ div.telo {
 
 /* Mobile devices */
 @media screen and (max-width: 1118px) {
+    .ul-top-nav{
+        display: none;
+    }
+    .nav-hamburger{
+        display: flex;
+    }
+
     .kosticka {
         height: 100px;
         width: 100px;
@@ -71,11 +78,11 @@ div.telo {
 
 /* Navigace */
 nav {
-    height: 2vh;
+    height: 4vh;
 }
 
 .ul-top-nav {
-    height: 2vh;
+    height: 4vh;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -84,6 +91,10 @@ nav {
     margin-right: 4vw;
     justify-content: space-evenly;
     align-items: center;
+}
+
+.nav-hamburger{
+    display: none;
 }
 
 li.nav a {
