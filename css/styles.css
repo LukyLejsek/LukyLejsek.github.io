@@ -67,6 +67,24 @@ div.telo {
         display: flex;
     }
 
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 1rem;
+        border-top: 1px solid #444;
+      }
+
     .kosticka {
         height: 100px;
         width: 100px;
