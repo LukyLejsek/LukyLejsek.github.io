@@ -74,16 +74,16 @@ div.telo {
         width: 100%;
         flex-direction: column;
         display: none;
-      }
+    }
 
-      .nav-links.active {
+    .nav-links.active {
         display: flex;
-      }
+    }
 
-      .nav-links a {
+    .nav-links a {
         padding: 1rem;
         border-top: 1px solid #444;
-      }
+    }
 
     .kosticka {
         height: 100px;
@@ -103,18 +103,16 @@ div.telo {
     height: 4vh;
 }
 
-@media screen and (min-width: 1118px) {
-    .nav-links {
-        height: 4vh;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        list-style-type: none;
-        margin-left: 2vw;
-        margin-right: 4vw;
-        justify-content: space-evenly;
-        align-items: center;
-    }
+.nav-links {
+    height: 4vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    list-style-type: none;
+    margin-left: 2vw;
+    margin-right: 4vw;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .menu-toggle {
@@ -127,7 +125,7 @@ div.telo {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
+}
 
 .menu-toggle span {
     background: rgb(0, 0, 0);
