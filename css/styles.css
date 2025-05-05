@@ -81,6 +81,9 @@ div.telo {
         gap: 10px;
         margin: 10px;
     }
+    #myLinks {
+        display: flex;
+    }
 }
 
 /* Navigace */
@@ -102,6 +105,9 @@ nav {
     }
 
     .nav-hamburger {
+        display: none;
+    }
+    #myLinks {
         display: none;
     }
 }
