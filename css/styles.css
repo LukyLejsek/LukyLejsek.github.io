@@ -81,7 +81,7 @@ div.telo {
 }
 
 /* Navigace */
-nav {
+.navbar {
     height: 4vh;
 }
 
@@ -110,14 +110,14 @@ nav {
   }
 
 .menu-toggle span {
-    background: white;
+    background: rgb(0, 0, 0);
     height: 3px;
     margin: 4px 0;
     width: 25px;
     border-radius: 2px;
   }
 
-li.nav a {
+.navbar a {
     padding: 5px 10px;
     border-radius: 3px;
     background-color: rgb(186, 199, 211);
@@ -126,13 +126,13 @@ li.nav a {
     transition: 1s;
 }
 
-.active.nav a {
+.navbar a.active.nav {
     /* v html musi v class= byt prvni to co ma byt dulezitejsi /vic nahore*/
     background-color: blue;
     color: white;
     transition: 1s;
 }
 
-li.nav a:hover {
+.navbar a:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
 }
