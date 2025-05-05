@@ -115,10 +115,6 @@ div.telo {
         justify-content: space-evenly;
         align-items: center;
     }
-
-    .menu-toggle {
-        display: none;
-    }
 }
 
 .menu-toggle {
