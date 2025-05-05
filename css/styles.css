@@ -6,7 +6,7 @@
 
 html {
     scroll-behavior: smooth;
-  }
+}
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -63,7 +63,7 @@ div.telo {
 /* Mobile devices */
 @media screen and (max-width: 1118px) {
 
-    .menu-toggle{
+    .menu-toggle {
         display: flex;
     }
 
@@ -98,7 +98,7 @@ div.telo {
         align-items: center;
     }
 
-    .menu-toggle{
+    .menu-toggle {
         display: none;
     }
 }
@@ -107,6 +107,12 @@ div.telo {
     display: none;
     flex-direction: column;
     cursor: pointer;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
 .menu-toggle span {
@@ -115,7 +121,7 @@ div.telo {
     margin: 4px 0;
     width: 25px;
     border-radius: 2px;
-  }
+}
 
 .navbar a {
     padding: 5px 10px;
