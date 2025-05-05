@@ -4,6 +4,10 @@
     border: 1px solid grey;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1em;
