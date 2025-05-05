@@ -62,11 +62,8 @@ div.telo {
 
 /* Mobile devices */
 @media screen and (max-width: 1118px) {
-    .ul-top-nav {
-        display: none;
-    }
 
-    .nav-hamburger {
+    .menu-toggle{
         display: flex;
     }
 
@@ -81,11 +78,6 @@ div.telo {
         gap: 10px;
         margin: 10px;
     }
-    #myLinks {
-        display: flex;
-        list-style-type: none;
-        flex-direction: column;
-    }
 }
 
 /* Navigace */
@@ -94,7 +86,7 @@ nav {
 }
 
 @media screen and (min-width: 1118px) {
-    .ul-top-nav {
+    .nav-links {
         height: 4vh;
         display: flex;
         flex-direction: row;
@@ -106,14 +98,24 @@ nav {
         align-items: center;
     }
 
-    .nav-hamburger {
+    .menu-toggle{
         display: none;
-    }
-    #myLinks {
-        display: none;
-        list-style-type: none;
     }
 }
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+.menu-toggle span {
+    background: white;
+    height: 3px;
+    margin: 4px 0;
+    width: 25px;
+    border-radius: 2px;
+  }
 
 li.nav a {
     padding: 5px 10px;
@@ -124,7 +126,7 @@ li.nav a {
     transition: 1s;
 }
 
-li.active.nav a {
+.active.nav a {
     /* v html musi v class= byt prvni to co ma byt dulezitejsi /vic nahore*/
     background-color: blue;
     color: white;

@@ -9,34 +9,29 @@
     <title>Luky je borec</title>
 </head>
 
-<nav>
-    <div class="top-nav">
-        <ul class="ul-top-nav">
-            <li class="active nav"><a href="index.html">Úvod</a></li>
-            <li class="nav"><a href="omne.html">O mně</a></li>
-            <li class="nav"><a href="sluzby.html">Služby</a></li>
-            <li class="nav"><a href="kontakty.html">Kontakty</a></li>
-        </ul>
-        <div class="nav-hamburger">
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <p>dddd</p>
-          </a>
-        </div>
-        <div id="myLinks">
-            <li class="active nav"><a href="index.html">Úvod</a></li>
-            <li class="nav"><a href="omne.html">O mně</a></li>
-            <li class="nav"><a href="sluzby.html">Služby</a></li>
-            <li class="nav"><a href="kontakty.html">Kontakty</a></li>
-        </div>
+<nav class="navbar">
+    <div><p>LOGO</p></div>
+    <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="nav-links" id="nav-links">
+        <a class="active nav" href="index.html">Úvod</a>
+        <a class="nav" href="omne.html">O mně</a>
+        <a class="nav" href="sluzby.html">Služby</a>
+        <a class="nav" href="kontakty.html">Kontakty</a>
     </div>
 </nav>
 
+<script>
+    const toggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
 
-
-
-
-
-
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
 
 <body>
     <div class="telo">
