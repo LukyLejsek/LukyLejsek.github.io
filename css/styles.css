@@ -61,28 +61,28 @@ div.telo {
 }
 
 /* Mobile devices */
-@media screen and (max-width: 1118px) {
-
+@media (max-width: 768px) {
     .menu-toggle {
-        display: flex;
+      display: flex;
     }
 
     .nav-links {
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        flex-direction: column;
-        display: none;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background-color: #333;
+      width: 100%;
+      flex-direction: column;
+      display: none;
     }
 
     .nav-links.active {
-        display: flex;
+      display: flex;
     }
 
     .nav-links a {
-        padding: 1rem;
-        border-top: 1px solid #444;
+      padding: 1rem;
+      border-top: 1px solid #444;
     }
 
     .kosticka {
