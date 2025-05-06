@@ -28,24 +28,7 @@
 </nav>
 
 <body>
-    <!-- script na otevirani a zavirani hambace na mobile (nesahat) -->
-    <script>
-        const toggle = document.getElementById('menu-toggle');
-        const navLinks = document.getElementById('nav-links');
-
-        toggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    </script>
-    <!-- script na funkctnost tlacitka na viditelnost outline -->
-    <script>
-        function toggleBorders() {
-            document.body.classList.toggle('highlight-borders');
-        }
-    </script>
-
     <button onclick="toggleBorders()">Přepnout okraje</button>
-    <!-- tlacitko na viditelnost outline (script je k nemu hned nad nim) -->
 
     <div class="telo">
         <p><a href="#kosticky">joooooooooo</a>ahooooj</p>
@@ -117,3 +100,20 @@
 </body>
 
 </html>
+
+
+<!-- script na otevirani a zavirani hambace na mobile (nesahat) -->
+<script>
+    const toggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    toggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+</script>
+<!-- script na funkctnost tlacitka na viditelnost outline -->
+<script>
+    function toggleBorders() {
+        document.body.classList.toggle('highlight-borders');
+    }
+</script>
