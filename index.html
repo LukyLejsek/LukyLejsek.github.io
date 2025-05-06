@@ -6,15 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/svg+xml" href="images/terminal_128dp_E3E3E3_FILL0_wght500_GRAD200_opsz48.svg">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="script.js"></script>
     <title>Luky je borec</title>
 </head>
 
 <nav class="navbar">
     <div>
-        <a href="index.html"><span class="material-symbols-outlined">
-            settings_accessibility
-            </span></a> <!-- # chce to udelat a dat sem nejake logo -->
+        <a href="index.html">LOGO</a> <!-- # chce to udelat a dat sem nejake logo -->
     </div>
     <div class="menu-toggle" id="menu-toggle">
         <span></span>
@@ -105,19 +103,3 @@
 
 </html>
 
-
-<!-- script na otevirani a zavirani hambace na mobile (nesahat) -->
-<script>
-    const toggle = document.getElementById('menu-toggle');
-    const navLinks = document.getElementById('nav-links');
-
-    toggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
-</script>
-<!-- script na funkctnost tlacitka na viditelnost outline -->
-<script>
-    function toggleBorders() {
-        document.body.classList.toggle('highlight-borders');
-    }
-</script>
