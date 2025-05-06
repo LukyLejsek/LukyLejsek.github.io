@@ -104,7 +104,7 @@ div.telo {
 
   .nav-links {
     display: flex;
-    gap: 1rem;
+    padding: 1rem;
   }
 
   .nav-links a {
