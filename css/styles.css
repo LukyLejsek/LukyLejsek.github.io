@@ -61,6 +61,11 @@ div.telo {
     pointer-events: all;
 }
 
+button.tl1 {
+    background-color: rgb(54, 54, 54);
+    color: rgb(208, 228, 238);
+}
+
 /* Mobile devices */
 @media (max-width: 768px) {
 
