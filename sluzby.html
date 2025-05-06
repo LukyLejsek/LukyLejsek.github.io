@@ -7,18 +7,38 @@
     <link rel="icon" type="image/svg+xml" href="images/terminal_128dp_E3E3E3_FILL0_wght500_GRAD200_opsz48.svg">
     <title>Služby</title>
 </head>
+
+<nav class="navbar">
+    <div>
+        <a href="index.html">LOGO</a> <!-- # chce to udelat a dat sem nejake logo -->
+    </div>
+    <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <!-- span je jako div ale neni to blok (pouziva se presne jako ted napriklad na zvyrazneni neceho) -->
+        <span></span> <!-- ted to dela ten hambac na mobile -->
+        <span></span>
+    </div>
+    <div class="nav-links" id="nav-links">
+        <a href="index.html">Úvod</a>
+        <a href="omne.html">O mně</a>
+        <a href="sluzby.html">Služby</a>
+        <a href="kontakty.html">Kontakty</a>
+    </div>
+</nav>
+
+<!-- script na otevirani a zavirani hambace na mobile (nesahat) -->
+<script>
+    const toggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    toggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+</script>
+
 <body>
     
-    <nav>
-        <div class="top-nav">
-            <ul class="ul-top-nav">
-                <li class="nav"><a href="index.html">Úvod</a></li>
-                <li class="nav"><a href="omne.html">O mně</a></li>
-                <li class="active nav"><a href="sluzby.html">Služby</a></li>
-                <li class="nav"><a href="kontakty.html">Kontakty</a></li>
-            </ul>
-        </div>
-    </nav>
+    <p>sluzbyyyyyyyyyyyy</p>
 
 </body>
 </html>
