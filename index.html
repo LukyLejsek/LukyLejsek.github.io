@@ -12,11 +12,12 @@
 <body>
     <nav class="navbar">
         <div>
-            <p>LOGO</p>
+            <p>LOGO</p> <!-- #### chce to udelat a dat sem nejake logo -->
         </div>
         <div class="menu-toggle" id="menu-toggle">
             <span></span>
-            <span></span>
+            <!-- span je jako div ale neni to blok (pouziva se presne jako ted napriklad na zvyrazneni neceho) -->
+            <span></span> <!-- ted to dela ten hambac na mobile -->
             <span></span>
         </div>
         <div class="nav-links" id="nav-links">
@@ -27,6 +28,7 @@
         </div>
     </nav>
 
+    <!-- script na otevirani a zavirani hambace na mobile (nesahat) -->
     <script>
         const toggle = document.getElementById('menu-toggle');
         const navLinks = document.getElementById('nav-links');
@@ -35,55 +37,61 @@
             navLinks.classList.toggle('active');
         });
     </script>
+    <!-- script na funkctnost tlacitka na viditelnost outline -->
+    <script>
+        function toggleBorders() {
+            document.body.classList.toggle('highlight-borders');
+        }
+    </script>
 
-    <body>
-        <div class="telo">
-            <p><a href="#kosticky">joooooooooo</a>ahooooj</p>
-            <p>čuuus</p>
-            <p>neeeeeeeeee</p>
-        </div>
-        <div id="kosticky" class="kosticky">
-            <div class="container-kosticky">
-                <div class="kosticka">
-                    <p><a href="index.html">1</a></p>
-                </div>
+    <button onclick="toggleBorders()">Přepnout okraje</button>  <!-- tlacitko na viditelnost outline (script je k nemu hned nad nim) -->
 
-                <div class="kosticka">
-                    <p>2</p>
-                </div>
+    <div class="telo">
+        <p><a href="#kosticky">joooooooooo</a>ahooooj</p>
+        <p>čuuus</p>
+        <p>neeeeeeeeee</p>
+    </div>
+    <div id="kosticky" class="kosticky">
+        <div class="container-kosticky">
+            <div class="kosticka">
+                <p><a href="index.html">1</a></p>
+            </div>
 
-                <div class="kosticka">
-                    <p>3</p>
-                </div>
+            <div class="kosticka">
+                <p>2</p>
+            </div>
 
-                <div class="kosticka">
-                    <p>4</p>
-                </div>
+            <div class="kosticka">
+                <p>3</p>
+            </div>
 
-                <div class="kosticka">
-                    <p>5</p>
-                </div>
+            <div class="kosticka">
+                <p>4</p>
+            </div>
 
-                <div class="kosticka">
-                    <p>6</p>
-                </div>
+            <div class="kosticka">
+                <p>5</p>
+            </div>
 
-                <div class="kosticka">
-                    <p>7</p>
-                </div>
+            <div class="kosticka">
+                <p>6</p>
+            </div>
 
-                <div class="kosticka">
-                    <p>8</p>
-                </div>
+            <div class="kosticka">
+                <p>7</p>
+            </div>
 
-                <div class="kosticka">
-                    <p>9</p>
-                </div>
+            <div class="kosticka">
+                <p>8</p>
+            </div>
 
+            <div class="kosticka">
+                <p>9</p>
             </div>
 
         </div>
 
+    </div>
 
 
 
@@ -104,6 +112,7 @@
 
 
 
-    </body>
+
+</body>
 
 </html>

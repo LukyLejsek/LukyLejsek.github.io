@@ -1,7 +1,10 @@
 * {
     padding: 0;
     margin: 0;
-    border: 1px solid grey;
+}
+
+.highlight-borders * {
+  outline: 1px solid lightgray !important;
 }
 
 html {
@@ -20,8 +23,6 @@ div.telo {
     background-color: rgb(54, 54, 54);
     color: rgb(208, 228, 238);
 }
-
-
 
 .kosticky {
     display: flex;
@@ -119,7 +120,7 @@ div.telo {
 
     .nav-links {
       position: absolute;
-      top: 60px;
+      top: 65px;
       left: 0;
       background-color: #333;
       width: 100%;
