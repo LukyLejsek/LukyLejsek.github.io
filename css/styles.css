@@ -104,12 +104,12 @@ div.telo {
 
   .nav-links {
     display: flex;
-    padding: 1rem;
   }
 
   .nav-links a {
     color: white;
     text-decoration: none;
+    padding: 1rem;
   }
 
   /* RESPONSIVE */

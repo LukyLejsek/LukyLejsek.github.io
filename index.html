@@ -9,25 +9,25 @@
     <title>Luky je borec</title>
 </head>
 
-<body>
-    <nav class="navbar">
-        <div>
-            <p>LOGO</p> <!-- # chce to udelat a dat sem nejake logo -->
-        </div>
-        <div class="menu-toggle" id="menu-toggle">
-            <span></span>
-            <!-- span je jako div ale neni to blok (pouziva se presne jako ted napriklad na zvyrazneni neceho) -->
-            <span></span> <!-- ted to dela ten hambac na mobile -->
-            <span></span>
-        </div>
-        <div class="nav-links" id="nav-links">
-            <a href="index.html">Úvod</a>
-            <a href="omne.html">O mně</a>
-            <a href="sluzby.html">Služby</a>
-            <a href="kontakty.html">Kontakty</a>
-        </div>
-    </nav>
+<nav class="navbar">
+    <div>
+        <p>LOGO</p> <!-- # chce to udelat a dat sem nejake logo -->
+    </div>
+    <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <!-- span je jako div ale neni to blok (pouziva se presne jako ted napriklad na zvyrazneni neceho) -->
+        <span></span> <!-- ted to dela ten hambac na mobile -->
+        <span></span>
+    </div>
+    <div class="nav-links" id="nav-links">
+        <a href="index.html">Úvod</a>
+        <a href="omne.html">O mně</a>
+        <a href="sluzby.html">Služby</a>
+        <a href="kontakty.html">Kontakty</a>
+    </div>
+</nav>
 
+<body>
     <!-- script na otevirani a zavirani hambace na mobile (nesahat) -->
     <script>
         const toggle = document.getElementById('menu-toggle');
@@ -44,7 +44,8 @@
         }
     </script>
 
-    <button onclick="toggleBorders()">Přepnout okraje</button>  <!-- tlacitko na viditelnost outline (script je k nemu hned nad nim) -->
+    <button onclick="toggleBorders()">Přepnout okraje</button>
+    <!-- tlacitko na viditelnost outline (script je k nemu hned nad nim) -->
 
     <div class="telo">
         <p><a href="#kosticky">joooooooooo</a>ahooooj</p>
