@@ -86,63 +86,204 @@ div.btn {
   }
 }
 
-/* Navigace */
+  /* Navigace */
+  
+  .navbar {
+    background-color: #5c3b91;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-.navbar {
-  background-color: #333;
-  padding: 1rem;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  }
 
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
+  span.navspan  {
+    background-color: #4f327c;
+    padding: 0.5rem;
+    margin: 0;
+    border-radius: 10px;
+    
+  }
 
-.menu-toggle span {
-  background: white;
-  height: 3px;
-  margin: 4px 0;
-  width: 25px;
-  border-radius: 2px;
-}
+  span.navspan:hover  {
+    background-color: #402864;
+    text-decoration: underline;
+    transition: 0.5s;
+  }
 
-.nav-links {
-  display: flex;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  padding: 1rem;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
+  
   .menu-toggle {
-    display: flex;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 65px;
-    left: 0;
-    background-color: #333;
-    width: 100%;
-    flex-direction: column;
     display: none;
+    flex-direction: column;
+    cursor: pointer;
   }
-
-  .nav-links.active {
+  
+  .menu-toggle span {
+    background: white;
+    height: 3px;
+    margin: 4px 0;
+    width: 25px;
+    border-radius: 2px;
+  }
+  
+  .nav-links {
     display: flex;
   }
-
+  
   .nav-links a {
-    padding: 1rem;
-    border-top: 1px solid #444;
+    color: white;
+    text-decoration: none;
+    padding-top: 1rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    padding-bottom: 1.5rem;
   }
+
+  .nav-links .dropdown a.nav {  
+    padding-top: 0.5rem;   /* nechapu proc to se musim dat ale kdyz */
+  }                        /* to tam neni tak je to vic nahore jak ostatni */
+
+  .dropdown a {
+    display: flex;
+ }
+
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: flex;
+    }
+
+    .navbar {
+      padding: 1rem;
+    }
+
+    .nav-links .dropdown a.nav {  
+      padding-top: 0.5rem;   /* nechapu proc to se musim dat ale kdyz */
+      padding-bottom: 0.5rem;
+    } 
+  
+    .nav-links {
+      position: absolute;
+      top: 65px;
+      left: 0;
+      background-color: #333;
+      width: 100%;
+      flex-direction: column;
+      display: none;
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    .nav-links a {
+      padding: 1rem;
+      border-top: 1px solid #5a5454;
+    }
+
+    /* efekt na hover submenu položky */
+    .dropdown a {
+       display: flex;
+       
+    }
+
+    span.navspan:hover  {
+      background-color: #333;
+      
+    }         /* nevim jak to zrusit takze to je na barvu pozadi */
+
+    span.navspan  {
+      background-color: #333;
+      padding: 0.5rem;
+      margin: 0;
+      border-radius: 10px;
+      
+    }
+  }
+
+:root {
+  --sirka: 100px;   /* ### NEPOUZITE ALE CHCE TO TAKTO PREDELAT NA NEZNAME I BARVY */
 }
+
+  /* základní dropdown kontejner */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* obsah dropdownu – skrytý ve výchozím stavu */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: calc(4rem + 0.3em);
+    right: -0.75rem;
+    background-color: #4f327c;
+    z-index: 1000;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+  
+  /* odkazy uvnitř dropdownu */
+  .dropdown-content a {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    padding: 1rem;
+  }
+  
+  /* po najetí na dropdown – zobraz submenu */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* efekt na hover submenu položky  #402864  */
+  .dropdown-content a:hover {
+    background-color: #402864;
+    
+  }
+
+  .dropdown-content-last:hover {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .dropdown {
+      width: 100%;
+    }
+  
+    .dropdown-content {
+      position: static; /* žádné překrytí */
+      box-shadow: none;
+      background-color: inherit;
+      display: flex;
+    }
+  
+    .dropdown .dropdown-content {
+      display: flex; /* zrušíme hover z PC */
+      flex-direction: column;
+    }
+
+    .dropdown-content a {
+        padding-left: 2rem;
+        color: white;
+        text-align: start;
+        background-color: #1d1d1d;
+    }
+  
+    /* Pokud máš class .active třeba po kliknutí (doporučuji pomocí JS) */
+    .dropdown-content.active {
+      display: block;
+    }
+
+  /* efekt na hover submenu položky */
+  .dropdown-content a:hover {
+    background-color: #36333a;
+  }
+
+  }

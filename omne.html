@@ -10,7 +10,7 @@
 </head>
 
 <nav class="navbar">
-    <div>
+    <div class="logobox">
         <a href="index.html">LOGO</a> <!-- # chce to udelat a dat sem nejake logo -->
     </div>
     <div class="menu-toggle" id="menu-toggle">
@@ -20,10 +20,26 @@
         <span></span>
     </div>
     <div class="nav-links" id="nav-links">
-        <a href="index.html">Úvod</a>
-        <a href="omne.html">O mně</a>
-        <a href="sluzby.html">Služby</a>
-        <a href="kontakty.html">Kontakty</a>
+        <div class="dropdown">
+            <a class="nav" href="index.html">
+                <span class="navspan">Úvod</span>
+            </a>
+            <div class="dropdown-content">
+                <a href="index.html">Domů</a>
+                <a href="novinky.html">Novinky</a>
+                <a class="dropdown-content-last" href="faq.html">FAQ</a>
+            </div>
+        </div>
+        
+        <a href="omne.html">
+            <span class="navspan">O mně</span>
+        </a>
+        <a href="sluzby.html">
+            <span class="navspan">Služby</span>
+        </a>
+        <a href="kontakty.html">
+            <span class="navspan">Kontakty</span>
+        </a>
     </div>
 </nav>
 
@@ -35,6 +51,12 @@
     toggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
     });
+</script>
+<!-- script na funkctnost tlacitka na viditelnost outline -->
+<script>
+    function toggleBorders() {
+        document.body.classList.toggle('highlight-borders');
+    }
 </script>
 
 <body>
