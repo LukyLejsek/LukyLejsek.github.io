@@ -243,6 +243,7 @@ div.btn {
   /* efekt na hover submenu položky  #402864  */
   .dropdown-content a:hover {
     background-color: #402864;
+    text-decoration: underline;
     
   }
 
