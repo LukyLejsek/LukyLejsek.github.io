@@ -17,8 +17,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="HKsanace/css/style.css">
-    <link rel="stylesheet" href="HKsanace/css/teststyle.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/teststyle.css">
     <title>HK sanace</title>
 </head>
 
@@ -207,7 +207,7 @@
     
 
     <script>
-        fetch('/HKsanace/sablony/navbar.html')
+        fetch('/sablony/navbar.html')
             .then(response => response.text())
             .then(data => {
                 const navbarContainer = document.getElementById('navbar-placeholder');
@@ -236,7 +236,7 @@
 
     <script>
 
-        fetch('/HKsanace/sablony/header.html')
+        fetch('/sablony/header.html')
             .then(response => response.text())
             .then(data => {
                 const navbarContainer = document.getElementById('header-placeholder');
@@ -246,7 +246,7 @@
 
     <script>
 
-        fetch('/HKsanace/sablony/footer.html')
+        fetch('/sablony/footer.html')
             .then(response => response.text())
             .then(data => {
                 const navbarContainer = document.getElementById('footer-placeholder');
