@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/teststyle.css">
+    <title>#</title>
+</head>
+
+<body>
+    <section id="header-placeholder"></section>
+<section id="navbar-placeholder"></section>
+
+    <section id="hero-2" class="d-flex align-items-center text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-4 text-shadow">...Vytvoříme pro vás nový domov.</h1>
+                    <p>Pokud vám zateklo neváhejte se ozvat na číslo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    d
+
+
+
+
+
+
+    <section id="footer-placeholder"></section>
+
+
+
+
+
+
+    <script>
+        fetch('/sablony/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                const navbarContainer = document.getElementById('navbar-placeholder');
+                navbarContainer.innerHTML = data;
+
+                // Aktivní odkaz v menu
+                const currentPage = window.location.pathname.split("/").pop();
+                const links = navbarContainer.querySelectorAll(".nav-links a");
+
+                links.forEach(link => {
+                    const linkPage = link.getAttribute("href");
+                    if (linkPage === currentPage || (linkPage === "index.html" && currentPage === "")) {
+                        link.classList.add("active");
+                    }
+                });
+
+                // 💥 Teď spustíme hamburger menu JS manuálně (protože se nespoléháme na <script> v navbar.html)
+                const toggle = navbarContainer.querySelector('#menu-toggle');
+                const navLinks = navbarContainer.querySelector('#nav-links');
+
+                toggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                });
+            });
+    </script>
+
+    <script>
+
+        fetch('/sablony/header.html')
+            .then(response => response.text())
+            .then(data => {
+                const navbarContainer = document.getElementById('header-placeholder');
+                navbarContainer.innerHTML = data;
+            });
+    </script>
+
+    <script>
+
+        fetch('/sablony/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const navbarContainer = document.getElementById('footer-placeholder');
+                navbarContainer.innerHTML = data;
+            });
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

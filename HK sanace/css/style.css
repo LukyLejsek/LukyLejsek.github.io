@@ -1,0 +1,321 @@
+* {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    
+
+    a {
+        color: black;
+    }
+}
+
+
+
+
+h2 {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+:root {
+    --body_color: #f7f7f7; /* #FAF6F6 */
+}
+
+
+
+body {
+    background-color: var(--body_color);
+}
+
+#header {
+    background-color: var(--bs-primary) !important;
+}
+
+/* Navigace */
+
+
+
+#navbar {
+    background-color: #ffffff;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    #jazyk {
+        width: 170px;
+    }
+   
+}
+
+span.navspan {
+    background-color: #ffffff;
+    padding: 0.5rem;
+    margin: 0;
+    border-radius: 10px;
+    color: black;
+    font-weight: 600;
+
+}
+
+span.navspan:hover {
+    background-color: #ffffff;
+    text-decoration: underline;
+    transition: 0.5s;
+}
+
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    background: rgb(0, 0, 0);
+    height: 3px;
+    margin: 4px 0;
+    width: 25px;
+    border-radius: 2px;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding-top: 1.5rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.dropdown a {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    #navbar {
+        padding: 1rem;
+    }
+
+    .nav-links .dropdown a.nav {
+        padding-top: 0.5rem;
+        /* nechapu proc to se musim dat ale kdyz */
+        padding-bottom: 0.5rem;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 135.5px;
+        left: 0;
+        background-color: #333;
+        width: 100%;
+        flex-direction: column;
+        display: none;
+        z-index: 3;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 1rem;
+        border-top: 1px solid #5a5454;
+    }
+
+    /* efekt na hover submenu položky */
+    .dropdown a {
+        display: flex;
+
+    }
+
+    span.navspan:hover {
+        background-color: #333;
+
+    }
+
+    /* nevim jak to zrusit takze to je na barvu pozadi */
+
+    span.navspan {
+        background-color: #333;
+        padding: 0.5rem;
+        margin: 0;
+        border-radius: 10px;
+
+    }
+
+    #jazyk {
+        display: none;
+    }
+}
+
+
+#hero {
+    background-color: #114d915b !important;
+    background-image: url('/img/hero.png');
+    background-size: cover;
+    /* roztáhne obrázek přes celou sekci */
+    background-position: center;
+    /* zarovná obrázek na střed */
+    background-repeat: no-repeat;
+    /* zabrání opakování obrázku */
+    height: 70vh;
+    /* sekce bude mít výšku celé obrazovky */
+    color: white;
+    /* text bude bílý kvůli kontrastu */
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    position: relative;
+
+    h1 {
+        margin-bottom: 4rem;
+    }
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* černá s 50% průhledností */
+    z-index: 1;
+    height: 70vh;
+}
+
+#hero>* {
+    position: relative;
+    z-index: 2;
+    /* aby text byl nad překrytím */
+}
+
+#hero-2 {
+    background-color: #114d915b !important;
+    background-image: url('/img/hero.png');
+    background-size: cover;
+    /* roztáhne obrázek přes celou sekci */
+    background-position: center;
+    /* zarovná obrázek na střed */
+    background-repeat: no-repeat;
+    /* zabrání opakování obrázku */
+    height: 40vh;
+    /* sekce bude mít výšku celé obrazovky */
+    color: white;
+    /* text bude bílý kvůli kontrastu */
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    position: relative;
+
+    h1 {
+        margin-bottom: 4rem;
+    }
+}
+
+#hero-2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* černá s 50% průhledností */
+    z-index: 1;
+    height: 40vh;
+}
+
+#hero-2>* {
+    position: relative;
+    z-index: 2;
+    /* aby text byl nad překrytím */
+}
+
+.profile-picture {
+    height: 100px;
+    width: 100px;
+    outline: 2px solid rgb(63, 63, 63);
+    background-color: rgb(211, 211, 211);
+    border-radius: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#footer {
+    background-color: var(--bs-primary);
+}

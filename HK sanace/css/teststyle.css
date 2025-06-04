@@ -1,0 +1,167 @@
+.rezim-jazyk {
+    color: black;
+    margin: 0;
+}
+
+div.nav-links {
+    gap: 40px;
+}
+
+
+.nav-link {
+    position: relative;
+}
+
+
+.nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 5px;
+    background-color: var(--bs-primary);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    transition: 0.3s;
+    /* toto ma byt ze ta dolni carka zacne odprostred a rozjede se do stran */
+    transition-timing-function: ease-in-out;
+    transform: scaleX(1);
+}
+
+a.nav-link.active .navspan {
+    color: var(--bs-primary) !important;
+}
+
+a.nav-link:hover .navspan {
+    color: var(--bs-primary) !important;
+    background-color: #0d6dfd23;
+}
+
+.nav-logo {
+    scale: 0.8;
+    margin-left: 1rem;
+}
+
+.logobox {
+    /* sirka boxu kde je logo chce nejak doladit */
+    max-width: 216px;
+}
+
+/* #0d6efd modra barva ktera tam byla predtim  #215f9a = barva loga*/
+
+:root {
+    --bs-primary: #1665af;
+    --bs-btn-bg: #FCCB06 !important;
+    --btn-primary: #FCCB06 !important;
+}
+
+.tlacitko {
+    background-color: #FCCB06;
+}
+.tlacitko:hover {
+    background-color: #d8ae08;
+}
+
+.img-fluid {
+    width: fit-content;
+    height: fit-content;
+}
+
+.mapa {
+    height: 40vh;
+}
+
+.hvezdicka {
+    color: rgb(211, 0, 0);
+}
+
+input#fullname,
+input#email,
+input#phone {
+    max-width: 20vw;
+}
+
+::placeholder {
+    color: #cccccc !important;
+}
+
+.oblast {
+    color: var(--bs-primary);
+}
+
+#mapa-placeholder {
+    background-color: #f0f0f0;
+    color: #333;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-family: sans-serif;
+    position: relative;
+}
+
+#mapa-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif !important;
+  font-optical-sizing: auto;
+  font-weight: 700  !important;
+  font-style: normal;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif !important;
+  font-optical-sizing: auto;
+  font-weight: 700  !important;
+  font-style: normal;
+  font-size: 36px;
+  color: #1665af !important;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 450;
+  font-style: normal;
+}
+
+.zvyraznene {
+    color: #29a4dd;
+font-weight: 600;
+}
+
+.btn-zlute {
+  background-color: #29a4dd;
+  color: #222E50;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  font-size: normal;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  text-decoration: none;
+
+  a {
+    text-decoration: none;
+    font-weight: bold;
+  font-size: normal;
+  }
+}
+
+.btn-zlute:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.sedive {
+    color: #b8b8b8;
+}
+
