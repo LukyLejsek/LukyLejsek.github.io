@@ -33,6 +33,9 @@ body {
 #header {
     background-color: var(--bs-primary) !important;
     color: white !important;
+    a {
+        color: white !important;
+    }
 }
 
 /* Navigace */
@@ -163,7 +166,7 @@ span.navspan:hover {
 
 
 #hero {
-    background-color: #0a2e555b !important;
+    background-color: #0a2e5559 !important;
     background-image: url('/img/hero.png');
     background-size: cover;
     /* roztáhne obrázek přes celou sekci */
@@ -192,7 +195,7 @@ span.navspan:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: hsla(0, 0%, 0%, 0.637);
     /* černá s 50% průhledností */
     z-index: 1;
     height: 70vh;
