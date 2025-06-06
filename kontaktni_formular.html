@@ -40,9 +40,56 @@
     </section>
 
 
+<section id="form"> <!-- https://formspree.io/ 
+        
+        https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1524.3717560285174!2d14.449839576033558!3d50.01739980236406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b9188c6325647%3A0x4e873ca37b48d235!2sOffice%20Park%20Nov%C3%A9%20Dvory!5e0!3m2!1sen!2scz!4v1748270236656!5m2!1sen!2scz
+        
+        -->
+        <div class="container bg-white p-3 my-4 rounded-4">
+            <h2>Kontaktní formulář</h2>
+            <p class="pred">Omlouváme se ale tento formulář zatím nefunguje, <br>
+                Tým HK sanace
+            </p>
+            <form id="contact-form" method="POST">
+                <div class="mb-3">
+                    <label for="fullname" class="form-label">Jméno a příjmení</label>
+                    <input type="text" class="form-control" id="fullname" name="fullname" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="test@gmail.com"
+                        required>
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Telefonní číslo</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="+420 123 456 789"
+                        required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Zpráva</label>
+                    <textarea class="form-control" id="message" name="message" rows="5"
+                        placeholder="...zde můžete zanechat váš dotaz či komentář." required></textarea>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="gdpr-consent" required>
+                    <label class="form-check-label" for="gdpr-consent">
+                        Souhlasím se zpracováním osobních údajů<span class="hvezdicka">*</span>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary">Odeslat</button>
+            </form>
+        </div>
 
-    d
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const phoneInput = document.getElementById('phone');
+                phoneInput.addEventListener('input', function () {
+                    this.value = this.value.replace(/[^0-9+ ]/g, ''); // odstraní vše kromě číslic a mezer
+                });
+            });
+        </script>
 
+    </section>
 
 
 
