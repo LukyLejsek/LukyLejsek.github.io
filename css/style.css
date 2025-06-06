@@ -332,4 +332,8 @@ span.navspan:hover {
     a {
         color: white !important;
     }
+
+    a.cervene {
+        color: rgb(255, 30, 0) !important;
+    }
 }
