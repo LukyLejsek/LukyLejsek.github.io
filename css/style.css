@@ -32,6 +32,7 @@ body {
 
 #header {
     background-color: var(--bs-primary) !important;
+    color: white !important;
 }
 
 /* Navigace */
@@ -256,6 +257,8 @@ span.navspan:hover {
 .bezunderline {
     text-decoration: none;
 }
+
+
 
 
 
