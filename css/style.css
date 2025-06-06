@@ -328,4 +328,8 @@ span.navspan:hover {
 
 #footer {
     background-color: var(--bs-primary);
+    color: white !important;
+    a {
+        color: white !important;
+    }
 }
