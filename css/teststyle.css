@@ -82,6 +82,10 @@ input#phone {
     max-width: 20vw;
 }
 
+textarea#message {
+    max-width: 50vw;
+}
+
 ::placeholder {
     color: #cccccc !important;
 }

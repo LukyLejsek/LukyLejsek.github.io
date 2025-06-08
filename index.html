@@ -163,34 +163,36 @@
             <p class="pred">Omlouváme se ale tento formulář zatím nefunguje, <br>
                 Tým HK sanace
             </p>
-            <form id="contact-form" method="POST">
-                <div class="mb-3">
-                    <label for="fullname" class="form-label">Jméno a příjmení</label>
-                    <input type="text" class="form-control" id="fullname" name="fullname" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">E-mail</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="test@gmail.com"
-                        required>
-                </div>
-                <div class="mb-3">
-                    <label for="phone" class="form-label">Telefonní číslo</label>
-                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="+420 123 456 789"
-                        required>
-                </div>
-                <div class="mb-3">
-                    <label for="message" class="form-label">Zpráva</label>
-                    <textarea class="form-control" id="message" name="message" rows="5"
-                        placeholder="...zde můžete zanechat váš dotaz či komentář." required></textarea>
-                </div>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="gdpr-consent" required>
-                    <label class="form-check-label" for="gdpr-consent">
-                        Souhlasím se zpracováním osobních údajů<span class="hvezdicka">*</span>
-                    </label>
-                </div>
-                <button type="submit" class="btn btn-primary">Odeslat</button>
-            </form>
+            <div id="form-placeholder">
+                <form id="contact-form" method="POST">
+                    <div class="mb-3">
+                        <label for="fullname" class="form-label">Jméno a příjmení</label>
+                        <input type="text" class="form-control" id="fullname" name="fullname" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="test@gmail.com"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Telefonní číslo</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="+420 123 456 789"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Zpráva</label>
+                        <textarea class="form-control" id="message" name="message" rows="5"
+                            placeholder="...zde můžete zanechat váš dotaz či komentář." required></textarea>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="gdpr-consent" required>
+                        <label class="form-check-label" for="gdpr-consent">
+                            Souhlasím se zpracováním osobních údajů<span class="hvezdicka">*</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Odeslat</button>
+                </form>
+            </div>
         </div>
 
         <script>
