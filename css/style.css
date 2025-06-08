@@ -1,24 +1,9 @@
 * {
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    
-
     a {
         color: black;
     }
 }
 
-
-
-
-h2 {
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
-}
 
 :root {
     --body_color: #f7f7f7; /* #FAF6F6 */
@@ -61,8 +46,9 @@ span.navspan {
     margin: 0;
     border-radius: 10px;
     color: black;
-    font-weight: 600;
-
+    font-weight: 500;
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
 }
 
 span.navspan:hover {
