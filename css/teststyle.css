@@ -3,9 +3,13 @@
     margin: 0;
 }
 
-div.nav-links {
+@media (min-width: 1070px) {
+  div.nav-links {
     gap: 40px;
 }
+}
+
+
 
 
 .nav-link {

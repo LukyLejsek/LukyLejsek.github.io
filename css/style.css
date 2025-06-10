@@ -98,12 +98,6 @@ span.navspan:hover {
         padding: 1rem;
     }
 
-    .nav-links .dropdown a.nav {
-        padding-top: 0.5rem;
-        /* nechapu proc to se musim dat ale kdyz */
-        padding-bottom: 0.5rem;
-    }
-
     .nav-links {
         position: absolute;
         top: 135.5px;
@@ -113,6 +107,7 @@ span.navspan:hover {
         flex-direction: column;
         display: none;
         z-index: 3;
+        height: fit-content;
     }
 
     .nav-links.active {
@@ -122,12 +117,6 @@ span.navspan:hover {
     .nav-links a {
         padding: 1rem;
         border-top: 1px solid #9e9e9e;
-    }
-
-    /* efekt na hover submenu položky */
-    .dropdown a {
-        display: flex;
-
     }
 
     span.navspan:hover {
@@ -147,6 +136,10 @@ span.navspan:hover {
 
     #jazyk {
         display: none;
+    }
+
+    .nav-link {
+        height: 50px;
     }
 }
 
