@@ -125,6 +125,7 @@ h2 {
   font-weight: 500;
   font-style: bold;
   color: #1665af !important;
+  font-size: 23px;
 }
 
 h3 {
@@ -194,5 +195,16 @@ font-weight: 400;
 
 .sedive {
     color: #b8b8b8;
+}
+
+.neviditelne {
+    color: #b8b8b8;
+    opacity: 0;
+}
+
+.footer-logo {
+    position: relative;
+    left : -4px;
+    top: -2px;
 }
 
