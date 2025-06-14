@@ -102,8 +102,8 @@ textarea#message {
     border-radius: 10px;
     font-family: sans-serif;
     position: relative;
-    height: 500px;
-    width: 700px;
+    height: 450px;
+    width: 650px;
 }
 
 #mapa-container {
@@ -236,4 +236,16 @@ font-weight: 400;
   transform: scale(1.05);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
   cursor: pointer;
+}
+
+
+.mapa-nahoru {
+    margin-top: 3rem;
+}
+
+.mezera-container {
+    padding-right: 6rem;
+    padding-left: 6rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
