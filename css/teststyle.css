@@ -102,6 +102,8 @@ textarea#message {
     border-radius: 10px;
     font-family: sans-serif;
     position: relative;
+    height: 500px;
+    width: 700px;
 }
 
 #mapa-container {
@@ -139,7 +141,7 @@ h3 {
 p {
   font-family: "Noto Sans", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 300;
+  font-weight: 200;
   font-style: normal;
 }
 
@@ -155,7 +157,7 @@ button {
 a {
   font-family: "Noto Sans", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 300;
+  font-weight: 200;
   font-style: normal;
   
 }
@@ -208,3 +210,30 @@ font-weight: 400;
     top: -2px;
 }
 
+.btn-modre {
+  background-color: #2eb7f7;
+  color: #222E50;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  font-size: normal;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-family: "Noto Sans", sans-serif;
+
+  a {
+    text-decoration: none;
+    font-weight: bold;
+  font-size: normal;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 550;
+  }
+}
+
+.btn-modre:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
