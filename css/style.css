@@ -141,7 +141,15 @@ span.navspan:hover {
     .nav-link {
         height: 50px;
     }
-    
+
+    .mezera-container {
+    padding-right: 2rem;
+    padding-left: 2rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+
     }
 
 
