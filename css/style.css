@@ -229,8 +229,8 @@ span.navspan:hover {
 }
 
 .profile-picture {
-    width: 100px;
-      height: 125px;
+    width: 150px;
+      height: 187.5px;
       border: 2px solid black;
       border-radius: 8px;
       overflow: hidden;
@@ -249,6 +249,16 @@ span.navspan:hover {
 .pred {
     color: rgb(255, 51, 0);
 }
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
 
 
 
