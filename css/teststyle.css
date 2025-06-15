@@ -6,6 +6,15 @@
 @media (min-width: 1070px) {
   div.nav-links {
     gap: 40px;
+
+    
+}
+
+.mezera-container {
+    padding-right: 6rem;
+    padding-left: 6rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 }
 
@@ -247,9 +256,3 @@ font-weight: 400;
     margin-top: 3rem;
 }
 
-.mezera-container {
-    padding-right: 6rem;
-    padding-left: 6rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
