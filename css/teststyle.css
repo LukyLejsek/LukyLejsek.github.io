@@ -20,6 +20,20 @@
 .mezera-contacts {
   gap: 150px;
 }
+
+.odsazeni-vpravo {
+  margin-right: 4rem;
+}
+
+input#fullname,
+input#email,
+input#phone {
+    max-width: 20vw;
+}
+
+textarea#message {
+    max-width: 50vw;
+}
 }
 
 
@@ -91,16 +105,6 @@ a.nav-link:hover .navspan {
 
 .hvezdicka {
     color: rgb(211, 0, 0);
-}
-
-input#fullname,
-input#email,
-input#phone {
-    max-width: 20vw;
-}
-
-textarea#message {
-    max-width: 50vw;
 }
 
 ::placeholder {
@@ -258,5 +262,7 @@ font-weight: 400;
 strong.modraa {
     color: #1665af !important;
 }
+
+
 
 

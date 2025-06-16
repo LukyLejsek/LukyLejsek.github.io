@@ -156,7 +156,7 @@ span.navspan:hover {
 
 #hero {
     background-color: #0a2e5559 !important;
-    background-image: url('/img/hero.png');
+    background-image: url('/img/hero.jpeg');
     background-size: cover;
     /* roztáhne obrázek přes celou sekci */
     background-position: center;
@@ -198,7 +198,7 @@ span.navspan:hover {
 
 #hero-2 {
     background-color: #114d915b !important;
-    background-image: url('/img/hero.png');
+    background-image: url('/img/hero.jpeg');
     background-size: cover;
     /* roztáhne obrázek přes celou sekci */
     background-position: center;
@@ -340,9 +340,5 @@ span.navspan:hover {
     color: white !important;
     a {
         color: white !important;
-    }
-
-    a.cervene {
-        color: rgb(255, 30, 0) !important;
     }
 }
