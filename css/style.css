@@ -149,6 +149,9 @@ span.navspan:hover {
     padding-bottom: 0.25rem;
 }
 
+    .velikostp {
+        max-width: 90vw;
+    }
 
     }
 
