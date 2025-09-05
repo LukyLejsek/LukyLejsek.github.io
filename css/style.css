@@ -187,7 +187,7 @@ span.navspan:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: hsla(0, 0%, 0%, 0.637);
+    background-color: hsla(0, 0%, 0%, 0.52);
     /* černá s 50% průhledností */
     z-index: 1;
     height: 70vh;
@@ -229,7 +229,7 @@ span.navspan:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.637);
+    background-color: rgba(0, 0, 0, 0.52);
     /* černá s 50% průhledností */
     z-index: 1;
     height: 40vh;
