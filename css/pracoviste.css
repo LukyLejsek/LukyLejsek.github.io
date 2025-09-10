@@ -3,3 +3,19 @@
 
     background-color: lightgrey;
 }
+
+.bg-red {
+    background-color: red;
+}
+
+.box {
+    max-width: 14rem;
+}
+
+#boxs {
+    height: 100vh;
+}
+
+.boxs {
+    height: 100vh;
+}
