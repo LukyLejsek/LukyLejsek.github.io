@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lukáš Lejsek | Portfolio</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        /* Animace z App.tsx */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            opacity: 0;
+            animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 overflow-x-hidden">
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-black rounded-xl flex items-center justify-center">
+                    <span class="text-white font-black text-xl">L</span>
+                </div>
+                <h1 class="text-xl font-extrabold tracking-tight text-gray-900">
+                    LUKÁŠ LEJSEK
+                </h1>
+            </div>
+            
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#" class="text-sm font-medium text-gray-600 hover:text-black transition-colors">Projekty</a>
+                <a href="#" class="text-sm font-medium text-gray-600 hover:text-black transition-colors">O mně</a>
+                <a href="#" class="text-sm font-medium text-gray-600 hover:text-black transition-colors">Služby</a>
+                <a href="mailto:contact@lukaslejsek.cz" class="bg-black text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-gray-800 transition-all shadow-lg hover:shadow-black/20">
+                    Napište mi
+                </a>
+            </nav>
+    
+            <button class="md:hidden text-gray-900">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div class="min-h-screen pt-20">
+        <main class="max-w-7xl mx-auto px-6 py-12">
+            
+            <section class="mb-20 text-center md:text-left">
+                <div class="inline-block px-4 py-1.5 mb-6 text-sm font-bold tracking-widest text-blue-600 bg-blue-50 rounded-full">
+                    WEB DESIGN & DEVELOPMENT
+                </div>
+                <h2 class="text-5xl md:text-7xl font-extrabold text-gray-900 mb-6 tracking-tight leading-tight">
+                    Tvořím weby,<br />které <span class="text-blue-600">fungují</span>.
+                </h2>
+                <p class="text-xl text-gray-500 max-w-2xl leading-relaxed mb-10">
+                    Jsem Lukáš Lejsek, webový vývojář se zaměřením na moderní technologie a čistý design. 
+                    Zde najdete výběr mých nejnovějších projektů a experimentů.
+                </p>
+                
+                <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                    <button class="px-8 py-4 bg-black text-white rounded-2xl font-bold hover:bg-gray-800 transition-all shadow-xl hover:shadow-black/20">
+                        Prohlédnout práci
+                    </button>
+                    <button class="px-8 py-4 bg-white text-gray-900 border border-gray-200 rounded-2xl font-bold hover:bg-gray-50 transition-all shadow-sm">
+                        Více o mně
+                    </button>
+                </div>
+            </section>
+    
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
+                <div class="flex flex-wrap gap-2" id="category-filters">
+                    <button data-category="All" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-blue-600 text-white shadow-lg shadow-blue-200">
+                        Všechny
+                    </button>
+                    <button data-category="Školní Projekty" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-white text-gray-600 hover:bg-gray-100 border border-gray-200">
+                        Školní Projekty
+                    </button>
+                    <button data-category="Komerční" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-white text-gray-600 hover:bg-gray-100 border border-gray-200">
+                        Komerční
+                    </button>
+                    <button data-category="Osobní" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-white text-gray-600 hover:bg-gray-100 border border-gray-200">
+                        Osobní
+                    </button>
+                </div>
+                
+                <div class="text-sm font-medium text-gray-400" id="projects-count">
+                    Zobrazeno 8 projektů
+                </div>
+            </div>
+    
+            <section id="projects-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                </section>
+    
+            <section class="mt-32 mb-20">
+                <div class="bg-blue-600 rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32 blur-3xl"></div>
+                    <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-400/20 rounded-full -ml-32 -mb-32 blur-3xl"></div>
+                    
+                    <h3 class="text-3xl md:text-5xl font-extrabold mb-8 relative z-10">
+                        Máte v hlavě zajímavý projekt?
+                    </h3>
+                    <p class="text-blue-100 text-lg md:text-xl max-w-2xl mx-auto mb-10 relative z-10">
+                        Vždy rád spolupracuji na kreativních nápadech. Ozvěte se a společně vymyslíme nejlepší řešení.
+                    </p>
+                    <a href="mailto:contact@lukaslejsek.cz" class="inline-block bg-white text-blue-600 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-gray-50 transition-all shadow-2xl relative z-10">
+                        Pojďme na to
+                    </a>
+                </div>
+            </section>
+        </main>
+    
+        <footer class="bg-white border-t border-gray-100 py-12">
+            <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex items-center gap-2">
+                     <div class="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
+                        <span class="text-white font-black text-lg">L</span>
+                    </div>
+                    <span class="font-bold tracking-tight">Lukáš Lejsek</span>
+                </div>
+                
+                <div class="text-gray-400 text-sm">
+                    © <span id="year"></span> Lukáš Lejsek. Všechna práva vyhrazena.
+                </div>
+                
+                <div class="flex gap-6">
+                    <a href="#" class="text-gray-400 hover:text-black transition-colors">LinkedIn</a>
+                    <a href="#" class="text-gray-400 hover:text-black transition-colors">GitHub</a>
+                    <a href="#" class="text-gray-400 hover:text-black transition-colors">Instagram</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // 1. DATA (z constants.tsx)
+        const PROJECTS = [
+            {
+                id: '1',
+                title: 'Svět zvířat',
+                description: 'Interaktivní encyklopedie zvířat vytvořená jako školní projekt se zaměřením na UI/UX.',
+                category: 'Školní Projekty',
+                imageUrl: 'https://picsum.photos/seed/animals/600/600',
+                link: 'https://tux.panska.cz/~23ALejsekL',
+                tags: ['HTML', 'CSS', 'JS']
+            },
+            {
+                id: '2',
+                title: 'E-commerce Redesign',
+                description: 'Modernizace nákupního procesu pro lokálního prodejce elektroniky.',
+                category: 'Komerční',
+                imageUrl: 'https://picsum.photos/seed/shop/600/600',
+                link: '#',
+                tags: ['React', 'Tailwind']
+            },
+            {
+                id: '3',
+                title: 'Portfolio Verze 1',
+                description: 'Můj první pokus o osobní prezentaci postavený na čistém HTML/CSS.',
+                category: 'Osobní',
+                imageUrl: 'https://picsum.photos/seed/port1/600/600',
+                link: '#',
+                tags: ['CSS', 'Vanilla JS']
+            },
+            {
+                id: '4',
+                title: 'Dashboard System',
+                description: 'Administrační rozhraní pro správu skladových zásob v reálném čase.',
+                category: 'Komerční',
+                imageUrl: 'https://picsum.photos/seed/dash/600/600',
+                link: '#',
+                tags: ['Next.js', 'PostgreSQL']
+            },
+            {
+                id: '5',
+                title: 'Mobile App Concept',
+                description: 'Návrh a prototyp mobilní aplikace pro sledování fitness aktivit.',
+                category: 'Osobní',
+                imageUrl: 'https://picsum.photos/seed/fitness/600/600',
+                link: '#',
+                tags: ['Figma', 'UI Design']
+            },
+            {
+                id: '6',
+                title: 'Blog Engine',
+                description: 'Vlastní redakční systém postavený pro maximální rychlost načítání.',
+                category: 'Osobní',
+                imageUrl: 'https://picsum.photos/seed/blog/600/600',
+                link: '#',
+                tags: ['Gatsby', 'GraphQL']
+            },
+            {
+                id: '7',
+                title: 'Weather App',
+                description: 'Aplikace využívající OpenWeather API s animovaným pozadím.',
+                category: 'Školní Projekty',
+                imageUrl: 'https://picsum.photos/seed/weather/600/600',
+                link: '#',
+                tags: ['API', 'React']
+            },
+            {
+                id: '8',
+                title: 'Game Library',
+                description: 'Databáze videoher s možností filtrování a hodnocení uživateli.',
+                category: 'Osobní',
+                imageUrl: 'https://picsum.photos/seed/games/600/600',
+                link: '#',
+                tags: ['Typescript', 'Node']
+            }
+        ];
+
+        // 2. LOGIC
+        document.addEventListener('DOMContentLoaded', () => {
+            const gridContainer = document.getElementById('projects-grid');
+            const countLabel = document.getElementById('projects-count');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const yearSpan = document.getElementById('year');
+            
+            // Set Year
+            yearSpan.textContent = new Date().getFullYear();
+
+            // Function to generate Project Card HTML (z ProjectCard.tsx)
+            function createProjectCard(project, index) {
+                const tagsHtml = project.tags.slice(0, 2).map(tag => `
+                    <span class="text-[10px] bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded border border-gray-200">
+                        ${tag}
+                    </span>
+                `).join('');
+
+                return `
+                <div class="animate-fade-in" style="animation-delay: ${index * 50}ms; animation-fill-mode: forwards;">
+                    <div class="group relative flex flex-col bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 h-full">
+                        <div class="relative aspect-square overflow-hidden">
+                            <img 
+                                src="${project.imageUrl}" 
+                                alt="${project.title}"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                                <span class="text-white text-sm font-medium tracking-wide bg-white/20 backdrop-blur-md px-3 py-1 rounded-full">
+                                    Prohlédnout projekt
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2 py-1 rounded">
+                                    ${project.category}
+                                </span>
+                                <div class="flex gap-1">
+                                    ${tagsHtml}
+                                </div>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300 mb-2">
+                                ${project.title}
+                            </h3>
+                            
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-2">
+                                ${project.description}
+                            </p>
+
+                            <a 
+                                href="${project.link}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="mt-auto inline-flex items-center text-sm font-semibold text-gray-900 group-hover:text-blue-600 transition-all"
+                            >
+                                Navštívit web
+                                <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </a>
+                        </div>
+
+                        <a 
+                            href="${project.link}" 
+                            class="absolute inset-0 z-10" 
+                            aria-label="View ${project.title}"
+                        ></a>
+                    </div>
+                </div>
+                `;
+            }
+
+            // Function to Render Projects
+            function renderProjects(category) {
+                // Filter
+                const filtered = category === 'All' 
+                    ? PROJECTS 
+                    : PROJECTS.filter(p => p.category === category);
+
+                // Update Count
+                countLabel.textContent = `Zobrazeno ${filtered.length} projektů`;
+
+                // Update Grid
+                gridContainer.innerHTML = filtered.map((project, index) => createProjectCard(project, index)).join('');
+            }
+
+            // Init
+            renderProjects('All');
+
+            // Event Listeners for Filters
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const category = btn.getAttribute('data-category');
+                    
+                    // Update Active State Visuals
+                    filterBtns.forEach(b => {
+                        b.className = 'filter-btn px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-white text-gray-600 hover:bg-gray-100 border border-gray-200';
+                    });
+                    btn.className = 'filter-btn px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-blue-600 text-white shadow-lg shadow-blue-200';
+
+                    // Re-render
+                    renderProjects(category);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
