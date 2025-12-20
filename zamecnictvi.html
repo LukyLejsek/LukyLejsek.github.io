@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="cs" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zámečnictví Husák - Moderní Pohotovost</title>
+    <meta name="description"
+        content="Moderní a svěží webová prezentace pro nonstop zámečnickou pohotovost v Praze a okolí.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        montserrat: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        blue: {
+                            950: '#172554', // Approximate matches for standard tailwind palette if not loaded
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom styles for animations that are tricky with just utility classes */
+        .faq-content {
+            transition: all 0.3s ease-in-out;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+        }
+
+        .faq-content.open {
+            max-height: 200px;
+            opacity: 1;
+            margin-top: 0.5rem;
+        }
+
+        .chevron-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .chevron-icon.rotate {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900 flex flex-col min-h-screen">
+
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="bg-red-600 p-2 rounded-lg">
+                    <i data-lucide="lock" class="text-white w-6 h-6"></i>
+                </div>
+                <div>
+                    <h1 id="nav-title" class="font-montserrat text-lg font-extrabold leading-none text-white">
+                        ZÁMEČNICKÁ POHOTOVOST
+                    </h1>
+                    <p id="nav-subtitle" class="text-xs text-gray-200">Praha a Středočeský kraj</p>
+                </div>
+            </div>
+
+            <div class="hidden lg:flex items-center gap-8">
+                <div class="flex gap-6 font-semibold" id="desktop-links">
+                    <a href="#o-nás" class="hover:text-red-500 transition-colors text-white">O nás</a>
+                    <a href="#služby" class="hover:text-red-500 transition-colors text-white">Služby</a>
+                    <a href="#ceník" class="hover:text-red-500 transition-colors text-white">Ceník</a>
+                    <a href="#kontakty" class="hover:text-red-500 transition-colors text-white">Kontakty</a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="tel:+420606588222"
+                        class="bg-red-600 text-white px-5 py-2 rounded-full font-bold hover:bg-red-700 transition-all flex items-center gap-2">
+                        <i data-lucide="phone" width="18"></i>
+                        606 588 222
+                    </a>
+                </div>
+            </div>
+
+            <button id="mobile-menu-btn" class="lg:hidden text-red-500">
+                <i data-lucide="menu" width="32"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden lg:hidden bg-white absolute top-full left-0 w-full shadow-xl border-t p-6 flex-col gap-4 animate-in slide-in-from-top duration-300">
+            <a href="#o-nás" class="mobile-link text-lg font-bold text-gray-800 border-b pb-2">O nás</a>
+            <a href="#služby" class="mobile-link text-lg font-bold text-gray-800 border-b pb-2">Služby</a>
+            <a href="#ceník" class="mobile-link text-lg font-bold text-gray-800 border-b pb-2">Ceník</a>
+            <a href="#kontakty" class="mobile-link text-lg font-bold text-gray-800 border-b pb-2">Kontakty</a>
+            <a href="tel:606588222"
+                class="flex items-center justify-center gap-3 bg-red-600 text-white p-4 rounded-xl font-bold text-xl">
+                <i data-lucide="phone"></i> 606 588 222
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="relative h-[90vh] min-h-[600px] flex items-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1582139329536-e7284fece509?q=80&w=2000&auto=format&fit=crop"
+                    class="w-full h-full object-cover brightness-50" alt="Locksmith background" />
+                <div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-transparent"></div>
+            </div>
+
+            <div class="container mx-auto px-4 relative z-10 text-white">
+                <div class="max-w-2xl space-y-6">
+                    <div
+                        class="inline-flex items-center gap-2 bg-red-600/90 px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wider animate-pulse">
+                        <i data-lucide="clock" width="16"></i> Nonstop 24/7
+                    </div>
+                    <h2 class="text-5xl md:text-7xl font-montserrat font-extrabold leading-tight">
+                        Zámečnictví <br /><span class="text-red-500">Praha</span>
+                    </h2>
+                    <p class="text-xl md:text-2xl text-gray-200 font-light max-w-lg">
+                        Expresní dojezd po Praze <span class="text-white font-bold border-b-2 border-red-500">do 30
+                            minut</span>. Otevíráme byty, auta i trezory bez poškození.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="tel:+420606588222"
+                            class="flex items-center justify-center gap-3 bg-red-600 hover:bg-red-700 text-white text-2xl font-black py-5 px-8 rounded-2xl shadow-2xl shadow-red-600/30 transition-transform active:scale-95">
+                            <i data-lucide="phone" width="28" stroke-width="3"></i> 606 588 222
+                        </a>
+                        <div class="flex items-center gap-3 px-2">
+                            <div class="flex -space-x-2">
+                                <img src="https://i.pravatar.cc/40?img=11"
+                                    class="w-10 h-10 rounded-full border-2 border-white" alt="avatar" />
+                                <img src="https://i.pravatar.cc/40?img=12"
+                                    class="w-10 h-10 rounded-full border-2 border-white" alt="avatar" />
+                                <img src="https://i.pravatar.cc/40?img=13"
+                                    class="w-10 h-10 rounded-full border-2 border-white" alt="avatar" />
+                            </div>
+                            <div class="text-sm">
+                                <p class="font-bold">2000+ zakázek / rok</p>
+                                <p class="text-gray-300">Spokojení zákazníci v Praze</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 opacity-80 pt-8">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+                            class="w-8 h-8 cursor-pointer hover:scale-110 transition-transform" alt="WhatsApp" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg"
+                            class="w-8 h-8 cursor-pointer hover:scale-110 transition-transform" alt="Telegram" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Viber_logo_2018.svg"
+                            class="w-8 h-8 cursor-pointer hover:scale-110 transition-transform" alt="Viber" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="služby" class="py-24 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                    <div class="max-w-xl">
+                        <h2 class="text-4xl font-montserrat font-extrabold text-blue-900 mb-4">Profesionální zámečnické
+                            služby</h2>
+                        <p class="text-gray-600 text-lg">
+                            Specializujeme se na nouzové otevírání, montáže i opravy. S námi nezůstanete před zavřenými
+                            dveřmi.
+                        </p>
+                    </div>
+                    <a href="#ceník"
+                        class="bg-blue-50 text-blue-700 px-6 py-3 rounded-2xl font-bold hover:bg-blue-100 transition-colors">
+                        Zobrazit ceník
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div
+                        class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://picsum.photos/seed/lock1/600/400" alt="Otevírání zámků"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3
+                                class="text-lg font-bold text-gray-800 mb-4 line-clamp-2 leading-snug group-hover:text-red-600 transition-colors">
+                                Otevírání zámků bytů, domů a obchodních prostor
+                            </h3>
+                            <div class="mt-auto">
+                                <a href="#"
+                                    class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 group-hover:text-red-500 transition-colors uppercase tracking-widest">
+                                    Více info <i data-lucide="chevron-down" width="14" class="-rotate-90"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://picsum.photos/seed/safe/600/400" alt="Trezory"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3
+                                class="text-lg font-bold text-gray-800 mb-4 line-clamp-2 leading-snug group-hover:text-red-600 transition-colors">
+                                Otevírání trezorů
+                            </h3>
+                            <div class="mt-auto">
+                                <a href="#"
+                                    class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 group-hover:text-red-500 transition-colors uppercase tracking-widest">
+                                    Více info <i data-lucide="chevron-down" width="14" class="-rotate-90"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://picsum.photos/seed/car/600/400" alt="Auta"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3
+                                class="text-lg font-bold text-gray-800 mb-4 line-clamp-2 leading-snug group-hover:text-red-600 transition-colors">
+                                Otevírání zámků aut
+                            </h3>
+                            <div class="mt-auto">
+                                <a href="#"
+                                    class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 group-hover:text-red-500 transition-colors uppercase tracking-widest">
+                                    Více info <i data-lucide="chevron-down" width="14" class="-rotate-90"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://picsum.photos/seed/lock2/600/400" alt="Výměna"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3
+                                class="text-lg font-bold text-gray-800 mb-4 line-clamp-2 leading-snug group-hover:text-red-600 transition-colors">
+                                Výměna zámku
+                            </h3>
+                            <div class="mt-auto">
+                                <a href="#"
+                                    class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 group-hover:text-red-500 transition-colors uppercase tracking-widest">
+                                    Více info <i data-lucide="chevron-down" width="14" class="-rotate-90"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://picsum.photos/seed/emergency/600/400" alt="Pohotovost"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3
+                                class="text-lg font-bold text-gray-800 mb-4 line-clamp-2 leading-snug group-hover:text-red-600 transition-colors">
+                                Zámečnická pohotovost
+                            </h3>
+                            <div class="mt-auto">
+                                <a href="#"
+                                    class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 group-hover:text-red-500 transition-colors uppercase tracking-widest">
+                                    Více info <i data-lucide="chevron-down" width="14" class="-rotate-90"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://picsum.photos/seed/service/600/400" alt="Servis"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3
+                                class="text-lg font-bold text-gray-800 mb-4 line-clamp-2 leading-snug group-hover:text-red-600 transition-colors">
+                                Zámečnický servis
+                            </h3>
+                            <div class="mt-auto">
+                                <a href="#"
+                                    class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 group-hover:text-red-500 transition-colors uppercase tracking-widest">
+                                    Více info <i data-lucide="chevron-down" width="14" class="-rotate-90"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://picsum.photos/seed/tips/600/400" alt="Tipy"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3
+                                class="text-lg font-bold text-gray-800 mb-4 line-clamp-2 leading-snug group-hover:text-red-600 transition-colors">
+                                Zámkařský deník, rady a tipy
+                            </h3>
+                            <div class="mt-auto">
+                                <a href="#"
+                                    class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 group-hover:text-red-500 transition-colors uppercase tracking-widest">
+                                    Více info <i data-lucide="chevron-down" width="14" class="-rotate-90"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://picsum.photos/seed/news/600/400" alt="Aktuality"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3
+                                class="text-lg font-bold text-gray-800 mb-4 line-clamp-2 leading-snug group-hover:text-red-600 transition-colors">
+                                Zámečník Praha aktuality
+                            </h3>
+                            <div class="mt-auto">
+                                <a href="#"
+                                    class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 group-hover:text-red-500 transition-colors uppercase tracking-widest">
+                                    Více info <i data-lucide="chevron-down" width="14" class="-rotate-90"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-blue-900 text-white overflow-hidden relative">
+            <div class="absolute top-0 right-0 opacity-10 pointer-events-none">
+                <i data-lucide="shield-check" width="400" height="400"></i>
+            </div>
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="text-center mb-16">
+                    <h3 class="text-3xl font-montserrat font-bold mb-4">Proč si vybrat nás?</h3>
+                    <div class="h-1.5 w-24 bg-red-600 mx-auto rounded-full"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+                    <div
+                        class="flex flex-col items-center text-center space-y-4 p-6 bg-white/5 rounded-3xl backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
+                        <div class="p-4 bg-white rounded-2xl">
+                            <i data-lucide="star" class="text-yellow-500 w-8 h-8"></i>
+                        </div>
+                        <p class="font-medium text-lg text-blue-50">Zpracování objednávek zkušenými zámečníky.</p>
+                    </div>
+
+                    <div
+                        class="flex flex-col items-center text-center space-y-4 p-6 bg-white/5 rounded-3xl backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
+                        <div class="p-4 bg-white rounded-2xl">
+                            <i data-lucide="shield-check" class="text-blue-600 w-8 h-8"></i>
+                        </div>
+                        <p class="font-medium text-lg text-blue-50">Záruka na montážní práce a výměny - garance.</p>
+                    </div>
+
+                    <div
+                        class="flex flex-col items-center text-center space-y-4 p-6 bg-white/5 rounded-3xl backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
+                        <div class="p-4 bg-white rounded-2xl">
+                            <i data-lucide="zap" class="text-yellow-600 w-8 h-8"></i>
+                        </div>
+                        <p class="font-medium text-lg text-blue-50">Profesionální rozvoj a neustálé školení.</p>
+                    </div>
+
+                    <div
+                        class="flex flex-col items-center text-center space-y-4 p-6 bg-white/5 rounded-3xl backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
+                        <div class="p-4 bg-white rounded-2xl">
+                            <i data-lucide="clock" class="text-red-500 w-8 h-8"></i>
+                        </div>
+                        <p class="font-medium text-lg text-blue-50">Pohotovost 24/7, rychlý příjezd po Praze a Středních
+                            Čechách.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-montserrat font-extrabold text-blue-900 mb-4">Jak postupovat?</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">V nouzových situacích zachovejte klid. Máme vypracovaný
+                        systém, díky kterému budeme u vás v rekordním čase.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="relative flex flex-col items-center text-center group">
+                        <div
+                            class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-2xl font-black mb-4 group-hover:bg-red-600 group-hover:text-white transition-all duration-300">
+                            1
+                        </div>
+                        <h4 class="font-bold text-xl mb-2 text-gray-900">Nahlášení</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">Zavolejte a popište nám situaci (auto, byt,
+                            trezor).</p>
+                        <div class="hidden md:block absolute top-8 left-[60%] w-[80%] h-[2px] bg-blue-100 -z-10"></div>
+                    </div>
+
+                    <div class="relative flex flex-col items-center text-center group">
+                        <div
+                            class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-2xl font-black mb-4 group-hover:bg-red-600 group-hover:text-white transition-all duration-300">
+                            2
+                        </div>
+                        <h4 class="font-bold text-xl mb-2 text-gray-900">Adresa</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">Zašlete nám polohu nebo nadiktujte adresu.</p>
+                        <div class="hidden md:block absolute top-8 left-[60%] w-[80%] h-[2px] bg-blue-100 -z-10"></div>
+                    </div>
+
+                    <div class="relative flex flex-col items-center text-center group">
+                        <div
+                            class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-2xl font-black mb-4 group-hover:bg-red-600 group-hover:text-white transition-all duration-300">
+                            3
+                        </div>
+                        <h4 class="font-bold text-xl mb-2 text-gray-900">Cena</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">Dohodneme si předem orientační cenu.</p>
+                        <div class="hidden md:block absolute top-8 left-[60%] w-[80%] h-[2px] bg-blue-100 -z-10"></div>
+                    </div>
+
+                    <div class="relative flex flex-col items-center text-center group">
+                        <div
+                            class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-2xl font-black mb-4 group-hover:bg-red-600 group-hover:text-white transition-all duration-300">
+                            4
+                        </div>
+                        <h4 class="font-bold text-xl mb-2 text-gray-900">Výjezd</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">Pohotovost vyjíždí ihned, dojezd 20-40 min.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ceník" class="py-24 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                    <div class="space-y-8">
+                        <h2 class="text-4xl font-montserrat font-extrabold text-blue-900">Transparentní ceny</h2>
+                        <p class="text-gray-600 text-lg">
+                            U nás nečekejte skryté poplatky. Orientační cenu se dozvíte vždy předem po telefonu.
+                        </p>
+
+                        <div class="overflow-hidden rounded-3xl border border-gray-200 shadow-sm bg-white">
+                            <table class="w-full text-left">
+                                <thead class="bg-gray-50 border-b border-gray-200">
+                                    <tr>
+                                        <th class="px-6 py-4 font-bold text-blue-900 uppercase text-xs tracking-wider">
+                                            Služba</th>
+                                        <th
+                                            class="px-6 py-4 font-bold text-blue-900 uppercase text-xs tracking-wider text-right">
+                                            Cena</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-100">
+                                    <tr class="hover:bg-blue-50/50 transition-colors">
+                                        <td class="px-6 py-4 text-gray-700">Zabouchnuté dveře klasik (hlinikový,
+                                            bakelitový štít)</td>
+                                        <td class="px-6 py-4 font-bold text-red-600 text-right whitespace-nowrap">800 Kč
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-blue-50/50 transition-colors">
+                                        <td class="px-6 py-4 text-gray-700">Zabouchnuté dveře s bezpečtnostním kováním
+                                            (R1, 802, 807, apod.)</td>
+                                        <td class="px-6 py-4 font-bold text-red-600 text-right whitespace-nowrap">800 Kč
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-blue-50/50 transition-colors">
+                                        <td class="px-6 py-4 text-gray-700">Zabouchnuté bezpečnostní dveře (Next,
+                                            Sherlock, plastové, euro)</td>
+                                        <td class="px-6 py-4 font-bold text-red-600 text-right whitespace-nowrap">900 Kč
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-blue-50/50 transition-colors">
+                                        <td class="px-6 py-4 text-gray-700">Zabouchnuté dveře — klíč zevnitř, otevření
+                                            náhradním klíčem</td>
+                                        <td class="px-6 py-4 font-bold text-red-600 text-right whitespace-nowrap">900 Kč
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-blue-50/50 transition-colors">
+                                        <td class="px-6 py-4 text-gray-700">Zabouchnuté dveře s lištovými zámky,
+                                            samozamykací</td>
+                                        <td class="px-6 py-4 font-bold text-red-600 text-right whitespace-nowrap">1200
+                                            Kč</td>
+                                    </tr>
+                                    <tr class="hover:bg-blue-50/50 transition-colors">
+                                        <td class="px-6 py-4 text-gray-700">Výměna vložky/zámku</td>
+                                        <td class="px-6 py-4 font-bold text-red-600 text-right whitespace-nowrap">od 500
+                                            Kč</td>
+                                    </tr>
+                                    <tr class="hover:bg-blue-50/50 transition-colors">
+                                        <td class="px-6 py-4 text-gray-700">Otevírání aut bez poškození</td>
+                                        <td class="px-6 py-4 font-bold text-red-600 text-right whitespace-nowrap">od 900
+                                            Kč</td>
+                                    </tr>
+                                    <tr class="hover:bg-blue-50/50 transition-colors">
+                                        <td class="px-6 py-4 text-gray-700">Otevírání trezoru/sejfu</td>
+                                        <td class="px-6 py-4 font-bold text-red-600 text-right whitespace-nowrap">dle
+                                            dohody</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="bg-yellow-50 p-6 rounded-3xl border border-yellow-200 flex items-start gap-4">
+                            <div class="bg-yellow-400 p-2 rounded-lg text-white">
+                                <i data-lucide="credit-card" width="24"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-yellow-900 mb-1">Možnost platby kartou</h4>
+                                <p class="text-sm text-yellow-800">U techniků lze platit hotově i platební kartou přes
+                                    přenosný terminál.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-8">
+                        <h2 class="text-4xl font-montserrat font-extrabold text-blue-900">Dotazy a odpovědi</h2>
+                        <p class="text-gray-600 text-lg">Vše, co potřebujete vědět o naší službě.</p>
+
+                        <div class="space-y-4" id="faq-accordion">
+                            <div class="border-b border-gray-200 last:border-0 pb-4">
+                                <button class="flex justify-between items-center w-full text-left py-2 group faq-btn">
+                                    <span
+                                        class="font-bold text-lg text-gray-800 group-hover:text-red-600 transition-colors">Nabízíte
+                                        zámečnické služby na místě nebo v dílně?</span>
+                                    <i data-lucide="chevron-down"
+                                        class="chevron-icon transition-transform duration-300"></i>
+                                </button>
+                                <div class="faq-content">
+                                    <div class="py-2 text-gray-600 leading-relaxed">
+                                        Veškeré práce probíhají u zákazníka. Naše technická podpora vždy zeptá na adresu
+                                        a telefonní kontakt a sdělí předběžný čas příjezdu technika.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-b border-gray-200 last:border-0 pb-4">
+                                <button class="flex justify-between items-center w-full text-left py-2 group faq-btn">
+                                    <span
+                                        class="font-bold text-lg text-gray-800 group-hover:text-red-600 transition-colors">Jaká
+                                        je sazba za odvedenou práci?</span>
+                                    <i data-lucide="chevron-down"
+                                        class="chevron-icon transition-transform duration-300"></i>
+                                </button>
+                                <div class="faq-content">
+                                    <div class="py-2 text-gray-600 leading-relaxed">
+                                        Cena závisí na problému. Výjezd po Praze je 600 Kč bez DPH. Například
+                                        zabouchnuté dveře s bezpečnostním kováním vyjdou celkem na cca 1200 Kč + DPH.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-b border-gray-200 last:border-0 pb-4">
+                                <button class="flex justify-between items-center w-full text-left py-2 group faq-btn">
+                                    <span
+                                        class="font-bold text-lg text-gray-800 group-hover:text-red-600 transition-colors">Je
+                                        možné zaplatit na fakturu?</span>
+                                    <i data-lucide="chevron-down"
+                                        class="chevron-icon transition-transform duration-300"></i>
+                                </button>
+                                <div class="faq-content">
+                                    <div class="py-2 text-gray-600 leading-relaxed">
+                                        Preferujeme platbu v hotovosti nebo kartou přes terminál. Na fakturu jezdíme
+                                        pouze po předchozí domluvě s SVJ, družstvy nebo státními institucemi.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-blue-50 p-10 rounded-[3rem] space-y-6">
+                            <h3 class="text-2xl font-bold text-blue-900">Potřebujete okamžitou pomoc?</h3>
+                            <p class="text-blue-800/80">Dispečink je aktivní 24/7. Stačí zavolat a technik vyjíždí do 5
+                                minut.</p>
+                            <a href="tel:606588222"
+                                class="flex items-center justify-center gap-4 bg-red-600 text-white text-2xl font-black py-4 rounded-2xl hover:bg-red-700 transition-all">
+                                <i data-lucide="phone"></i> 606 588 222
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="o-nás" class="py-24 bg-gray-50 border-t border-gray-200">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto bg-white p-12 md:p-16 rounded-[4rem] shadow-sm">
+                    <h2
+                        class="text-3xl font-montserrat font-extrabold text-blue-900 mb-8 border-l-8 border-red-600 pl-6">
+                        Otevírání zámků Praha Nonstop</h2>
+                    <div class="prose prose-lg text-gray-600 space-y-6 max-w-none">
+                        <p>Nabízíme otevírání zámků, aut, dveří i trezorů, výměnu či oprava zámků po vloupání, výměnu
+                            bezpečnostních zámků. Otevírání dveří v případě zamknutých dveří, ztraceného klíče,
+                            zalomeného klíče či klíče zastrčeného v zámku z druhé strany dveří. A to vše nonstop, 24
+                            hodin denně, 7 dní v týdnu.</p>
+                        <p>Jsme specializované zámečnictví a zámkařství s dlouholetou zkušeností a praxí. Právě proto
+                            víme, jak otevřít jakýkoliv zámek. Ať už jste si zabouchli dveře a nemůžete se dostat domů
+                            nebo potřebujete otevřít dveře od auta, otevírání zámků je naší specializací.</p>
+                        <div class="bg-blue-50 p-8 rounded-3xl my-10">
+                            <h4 class="text-blue-900 font-bold mb-4 text-xl">Nejčastější důvody výjezdu:</h4>
+                            <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-blue-800">
+                                <li class="flex items-center gap-2">
+                                    <div class="w-2 h-2 bg-red-500 rounded-full"></div> Zabouchlé dveře s klíčem zevnitř
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <div class="w-2 h-2 bg-red-500 rounded-full"></div> Ztracené klíče od domu/auta
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <div class="w-2 h-2 bg-red-500 rounded-full"></div> Klíč nelze otočit v zámku
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <div class="w-2 h-2 bg-red-500 rounded-full"></div> Zlomený klíč ve válci
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <div class="w-2 h-2 bg-red-500 rounded-full"></div> Zámek poškozený vandaly
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <div class="w-2 h-2 bg-red-500 rounded-full"></div> Oprava po vloupání
+                                </li>
+                            </ul>
+                        </div>
+                        <p>Při expresním výjezdu je u vás náš technik do 20 - 40 minut. Vaší důvěry si vážíme, a proto
+                            zachováváme maximální diskrétnost a obezřetnost v dané situaci.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="kontakty" class="py-24 bg-white overflow-hidden">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-5 space-y-8">
+                        <h2 class="text-4xl font-montserrat font-extrabold text-blue-900">Kde působíme?</h2>
+                        <p class="text-gray-600 text-lg">Pokrýváme celou Prahu a přilehlé části Středočeského kraje.
+                            Naše vozy jsou strategicky rozmístěny tak, abychom byli vždy blízko.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="bg-blue-50 text-blue-600 px-4 py-2 rounded-full font-bold text-sm border border-blue-100">Praha
+                                1</span>
+                            <span
+                                class="bg-blue-50 text-blue-600 px-4 py-2 rounded-full font-bold text-sm border border-blue-100">Praha
+                                2</span>
+                            <span
+                                class="bg-blue-50 text-blue-600 px-4 py-2 rounded-full font-bold text-sm border border-blue-100">Praha
+                                3</span>
+                            <span
+                                class="bg-blue-50 text-blue-600 px-4 py-2 rounded-full font-bold text-sm border border-blue-100">Praha
+                                4</span>
+                            <span
+                                class="bg-blue-50 text-blue-600 px-4 py-2 rounded-full font-bold text-sm border border-blue-100">Praha
+                                5</span>
+                            <span
+                                class="bg-blue-50 text-blue-600 px-4 py-2 rounded-full font-bold text-sm border border-blue-100">Praha
+                                6</span>
+                            <span
+                                class="bg-blue-50 text-blue-600 px-4 py-2 rounded-full font-bold text-sm border border-blue-100">Praha
+                                7</span>
+                            <span
+                                class="bg-blue-50 text-blue-600 px-4 py-2 rounded-full font-bold text-sm border border-blue-100">Praha
+                                8</span>
+                            <span
+                                class="bg-blue-50 text-blue-600 px-4 py-2 rounded-full font-bold text-sm border border-blue-100">Praha
+                                9</span>
+                            <span
+                                class="bg-blue-50 text-blue-600 px-4 py-2 rounded-full font-bold text-sm border border-blue-100">Praha
+                                10</span>
+                            <span
+                                class="bg-red-50 text-red-600 px-4 py-2 rounded-full font-bold text-sm border border-red-100">Okolí
+                                Prahy</span>
+                        </div>
+                        <div class="p-8 bg-blue-900 rounded-[2.5rem] text-white">
+                            <p class="text-blue-300 uppercase text-xs tracking-widest font-black mb-4">Centrální
+                                dispečink</p>
+                            <a href="tel:606588222"
+                                class="text-3xl font-black block mb-4 hover:text-red-400 transition-colors">606 588
+                                222</a>
+                            <p class="text-sm opacity-60">Volejte kdykoliv - 24h denně, 7 dní v týdnu.</p>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-7 h-[500px] rounded-[3rem] overflow-hidden shadow-2xl relative">
+
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2561.860968435211!2d14.533904576899088!3d50.051435716012996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b9263e3b360c7%3A0x5ab7dee7382dbe3!2sZ%C3%A1me%C4%8Dnick%C3%A1%20Pohotovost%20Praha%20NONSTOP!5e0!3m2!1scs!2scz!4v1766238349557!5m2!1scs!2scz"
+                            class="w-full h-full border-0" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+
+                        <div class="absolute inset-0 bg-blue-900/10 pointer-events-none"></div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-blue-950 text-white pt-20 pb-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="space-y-6">
+                    <div class="flex items-center gap-2">
+                        <div class="bg-red-600 p-2 rounded-lg">
+                            <i data-lucide="lock" class="text-white w-6 h-6"></i>
+                        </div>
+                        <h1 class="font-montserrat text-lg font-extrabold leading-none">
+                            ZÁMEČNICKÁ POHOTOVOST
+                        </h1>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Vaše bezpečí je naší prioritou. Specialisté na otevírání zámků s tradicí a garancí kvality v
+                        celé Praze.
+                    </p>
+                    <div class="flex gap-4">
+                        <div class="bg-white/10 p-3 rounded-full hover:bg-red-600 transition-colors cursor-pointer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+                                class="w-5 h-5 invert" alt="FB" />
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-xl mb-6">Působíme v</h4>
+                    <div class="grid grid-cols-2 gap-2 text-sm text-gray-400">
+                        <a href="#" class="hover:text-white transition-colors">Praha 1</a>
+                        <a href="#" class="hover:text-white transition-colors">Praha 2</a>
+                        <a href="#" class="hover:text-white transition-colors">Praha 3</a>
+                        <a href="#" class="hover:text-white transition-colors">Praha 4</a>
+                        <a href="#" class="hover:text-white transition-colors">Praha 5</a>
+                        <a href="#" class="hover:text-white transition-colors">Praha 6</a>
+                        <a href="#" class="hover:text-white transition-colors">Praha 7</a>
+                        <a href="#" class="hover:text-white transition-colors">Praha 8</a>
+                        <a href="#" class="hover:text-white transition-colors">Praha 9</a>
+                        <a href="#" class="hover:text-white transition-colors">Praha 10</a>
+                        <a href="#" class="hover:text-white transition-colors col-span-2">Středočeský kraj</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-xl mb-6">Sídlo</h4>
+                    <address class="not-italic text-gray-400 text-sm space-y-2">
+                        <p>Herbenova 727/38</p>
+                        <p>Praha 10, 102 00</p>
+                        <p class="pt-4">IČO: 24734691</p>
+                    </address>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-xl mb-6">Kontakt</h4>
+                    <div class="space-y-4">
+                        <a href="tel:+420606588222"
+                            class="flex items-center gap-3 font-bold text-xl text-red-500 hover:text-red-400">
+                            <i data-lucide="phone" width="20"></i> 606 588 222
+                        </a>
+                        <a href="mailto:and.husak@seznam.cz"
+                            class="flex items-center gap-3 text-sm text-gray-400 hover:text-white">
+                            <i data-lucide="archive" width="16"></i> and.husak@seznam.cz
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+                <p id="copyright">© 2025 Lukáš Lejsek všechna práva vyhrazena</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white">Ochrana osobních údajů</a>
+                    <a href="#" class="hover:text-white">Web by Lukáš Lejsek</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="fixed bottom-6 right-6 z-50 lg:hidden flex flex-col gap-4">
+        <a href="https://wa.me/420606588222" class="bg-green-500 text-white p-4 rounded-full shadow-xl">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-8 h-8 invert"
+                alt="WhatsApp" />
+        </a>
+        <a href="tel:+420606588222"
+            class="bg-red-600 text-white p-6 rounded-full shadow-2xl shadow-red-600/50 flex items-center justify-center animate-pulse">
+            <i data-lucide="phone" width="32" stroke-width="3"></i>
+        </a>
+    </div>
+
+    <script>
+        // --- 1. Initialize Icons ---
+        lucide.createIcons();
+
+        // --- 2. Update Copyright Year ---
+        document.getElementById('copyright').innerHTML = `© ${new Date().getFullYear()} Zámečnictví Praha NONSTOP. Všechna práva vyhrazena.`;
+
+        // --- 3. Navbar Scroll Effect ---
+        const navbar = document.getElementById('navbar');
+        const navTitle = document.getElementById('nav-title');
+        const navSubtitle = document.getElementById('nav-subtitle');
+        const desktopLinks = document.getElementById('desktop-links').querySelectorAll('a');
+        const mobileToggle = document.getElementById('mobile-menu-btn');
+
+        function updateNavbar() {
+            if (window.scrollY > 20) {
+                // Scrolled State
+                navbar.classList.add('bg-white', 'shadow-md', 'py-2');
+                navbar.classList.remove('bg-transparent', 'py-4');
+
+                navTitle.classList.remove('text-white');
+                navTitle.classList.add('text-blue-900');
+
+                navSubtitle.classList.remove('text-gray-200');
+                navSubtitle.classList.add('text-gray-600');
+
+                desktopLinks.forEach(link => {
+                    link.classList.remove('text-white');
+                    link.classList.add('text-gray-800');
+                });
+            } else {
+                // Top State
+                navbar.classList.remove('bg-white', 'shadow-md', 'py-2');
+                navbar.classList.add('bg-transparent', 'py-4');
+
+                navTitle.classList.add('text-white');
+                navTitle.classList.remove('text-blue-900');
+
+                navSubtitle.classList.add('text-gray-200');
+                navSubtitle.classList.remove('text-gray-600');
+
+                desktopLinks.forEach(link => {
+                    link.classList.add('text-white');
+                    link.classList.remove('text-gray-800');
+                });
+            }
+        }
+
+        window.addEventListener('scroll', updateNavbar);
+        updateNavbar(); // Init check
+
+        // --- 4. Mobile Menu Toggle ---
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = mobileToggle.querySelector('svg');
+        let isMenuOpen = false;
+
+        mobileToggle.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('flex');
+                // Change icon to X (we can't easily swap SVGs without re-rendering, 
+                // but standard practice in vanilla is often just toggling classes or innerHTML)
+                // Re-rendering specific icon:
+                mobileToggle.innerHTML = '<i data-lucide="x" width="32"></i>';
+                lucide.createIcons();
+            } else {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+                mobileToggle.innerHTML = '<i data-lucide="menu" width="32"></i>';
+                lucide.createIcons();
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                isMenuOpen = false;
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+                mobileToggle.innerHTML = '<i data-lucide="menu" width="32"></i>';
+                lucide.createIcons();
+            });
+        });
+
+        // --- 5. FAQ Accordion ---
+        const faqButtons = document.querySelectorAll('.faq-btn');
+
+        faqButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('.chevron-icon');
+
+                // Toggle current
+                content.classList.toggle('open');
+                icon.classList.toggle('rotate');
+
+                // Close others (Accordion behavior)
+                faqButtons.forEach(otherBtn => {
+                    if (otherBtn !== btn) {
+                        const otherContent = otherBtn.nextElementSibling;
+                        const otherIcon = otherBtn.querySelector('.chevron-icon');
+                        otherContent.classList.remove('open');
+                        otherIcon.classList.remove('rotate');
+                    }
+                });
+            });
+        });
+
+    </script>
+</body>
+
+</html>
