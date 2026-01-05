@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zámečnictví Husák - Moderní Pohotovost</title>
+    <title>Zámečnictví - Pohotovost</title>
     <meta name="description"
         content="Moderní a svěží webová prezentace pro nonstop zámečnickou pohotovost v Praze a okolí.">
 
@@ -58,6 +58,35 @@
         .chevron-icon.rotate {
             transform: rotate(180deg);
         }
+
+
+        /* popup window*/
+        .demo-popup {
+            /* Pozicování */
+            position: fixed;
+            top: -150px;
+            /* Schované nad okrajem */
+            left: 50%;
+            transform: translateX(-50%);
+
+            /* Vzhled */
+            background-color: #d32e2e;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-family: sans-serif;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+
+            /* Animace */
+            transition: top 0.5s ease-in-out;
+        }
+
+        /* Třída, kterou přidáme pomocí JS pro zobrazení */
+        .demo-popup.is-visible {
+            top: 70px;
+            /* Sjede dolů */
+        }
     </style>
 </head>
 
@@ -70,11 +99,13 @@
                     <i data-lucide="lock" class="text-white w-6 h-6"></i>
                 </div>
                 <div>
-                    <h1 id="nav-title" class="font-montserrat text-lg font-extrabold leading-none text-white">
-                        ZÁMEČNICKÁ POHOTOVOST
-                    </h1>
-                    <p id="nav-subtitle" class="text-xs text-gray-200">Praha a Středočeský kraj</p>
+                    <a href="#main">
+                        <h1 id="nav-title" class="font-montserrat text-lg font-extrabold leading-none text-white">
+                            ZÁMEČNICKÁ POHOTOVOST
+                        </h1>
+                        <p id="nav-subtitle" class="text-xs text-gray-200">Praha</p>
                 </div>
+                </a>
             </div>
 
             <div class="hidden lg:flex items-center gap-8">
@@ -88,7 +119,7 @@
                     <a href="tel:+420606588222"
                         class="bg-red-600 text-white px-5 py-2 rounded-full font-bold hover:bg-red-700 transition-all flex items-center gap-2">
                         <i data-lucide="phone" width="18"></i>
-                        606 588 222
+                        987 654 321
                     </a>
                 </div>
             </div>
@@ -106,12 +137,12 @@
             <a href="#kontakty" class="mobile-link text-lg font-bold text-gray-800 border-b pb-2">Kontakty</a>
             <a href="tel:606588222"
                 class="flex items-center justify-center gap-3 bg-red-600 text-white p-4 rounded-xl font-bold text-xl">
-                <i data-lucide="phone"></i> 606 588 222
+                <i data-lucide="phone"></i> 987 654 321
             </a>
         </div>
     </nav>
 
-    <main>
+    <main id="main">
         <section class="relative h-[90vh] min-h-[600px] flex items-center overflow-hidden">
             <div class="absolute inset-0 z-0">
                 <img src="https://images.unsplash.com/photo-1582139329536-e7284fece509?q=80&w=2000&auto=format&fit=crop"
@@ -136,7 +167,7 @@
                     <div class="flex flex-col sm:flex-row gap-4 pt-4">
                         <a href="tel:+420606588222"
                             class="flex items-center justify-center gap-3 bg-red-600 hover:bg-red-700 text-white text-2xl font-black py-5 px-8 rounded-2xl shadow-2xl shadow-red-600/30 transition-transform active:scale-95">
-                            <i data-lucide="phone" width="28" stroke-width="3"></i> 606 588 222
+                            <i data-lucide="phone" width="28" stroke-width="3"></i> 987 654 321
                         </a>
                         <div class="flex items-center gap-3 px-2">
                             <div class="flex -space-x-2">
@@ -181,11 +212,16 @@
                     </a>
                 </div>
 
+                <!-- popup -->
+                <div id="demo-popup" class="demo-popup">
+                    Tato funkce je v rámci demoverze omezena a slouží pouze k ukázce uživatelského rozhraní.
+                </div>
+
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div
                         class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col">
                         <div class="relative h-48 overflow-hidden">
-                            <img src="https://picsum.photos/seed/lock1/600/400" alt="Otevírání zámků"
+                            <img src="img/zamecnictvi/1.jpg" alt="Otevírání zámků"
                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
@@ -197,8 +233,8 @@
                                 Otevírání zámků bytů, domů a obchodních prostor
                             </h3>
                             <div class="mt-auto">
-                                <a href="#"
-                                    class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 group-hover:text-red-500 transition-colors uppercase tracking-widest">
+                                <a href="#" 
+                                    class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 group-hover:text-red-500 transition-colors uppercase tracking-widest demo-trigger">
                                     Více info <i data-lucide="chevron-down" width="14" class="-rotate-90"></i>
                                 </a>
                             </div>
@@ -208,7 +244,7 @@
                     <div
                         class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col">
                         <div class="relative h-48 overflow-hidden">
-                            <img src="https://picsum.photos/seed/safe/600/400" alt="Trezory"
+                            <img src="img/zamecnictvi/2.jpg" alt="Trezory"
                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
@@ -220,8 +256,8 @@
                                 Otevírání trezorů
                             </h3>
                             <div class="mt-auto">
-                                <a href="#"
-                                    class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 group-hover:text-red-500 transition-colors uppercase tracking-widest">
+                                <a href="#" 
+                                    class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 group-hover:text-red-500 transition-colors uppercase tracking-widest demo-trigger">
                                     Více info <i data-lucide="chevron-down" width="14" class="-rotate-90"></i>
                                 </a>
                             </div>
@@ -231,7 +267,7 @@
                     <div
                         class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col">
                         <div class="relative h-48 overflow-hidden">
-                            <img src="https://picsum.photos/seed/car/600/400" alt="Auta"
+                            <img src="img/zamecnictvi/3.jpg" alt="Auta"
                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
@@ -243,8 +279,8 @@
                                 Otevírání zámků aut
                             </h3>
                             <div class="mt-auto">
-                                <a href="#"
-                                    class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 group-hover:text-red-500 transition-colors uppercase tracking-widest">
+                                <a href="#" 
+                                    class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 group-hover:text-red-500 transition-colors uppercase tracking-widest demo-trigger">
                                     Více info <i data-lucide="chevron-down" width="14" class="-rotate-90"></i>
                                 </a>
                             </div>
@@ -254,7 +290,7 @@
                     <div
                         class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col">
                         <div class="relative h-48 overflow-hidden">
-                            <img src="https://picsum.photos/seed/lock2/600/400" alt="Výměna"
+                            <img src="img/zamecnictvi/4.jpg" alt="Výměna"
                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
@@ -266,8 +302,8 @@
                                 Výměna zámku
                             </h3>
                             <div class="mt-auto">
-                                <a href="#"
-                                    class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 group-hover:text-red-500 transition-colors uppercase tracking-widest">
+                                <a href="#" 
+                                    class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 group-hover:text-red-500 transition-colors uppercase tracking-widest demo-trigger">
                                     Více info <i data-lucide="chevron-down" width="14" class="-rotate-90"></i>
                                 </a>
                             </div>
@@ -277,7 +313,7 @@
                     <div
                         class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col">
                         <div class="relative h-48 overflow-hidden">
-                            <img src="https://picsum.photos/seed/emergency/600/400" alt="Pohotovost"
+                            <img src="img/zamecnictvi/5.jpg" alt="Pohotovost"
                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
@@ -289,8 +325,8 @@
                                 Zámečnická pohotovost
                             </h3>
                             <div class="mt-auto">
-                                <a href="#"
-                                    class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 group-hover:text-red-500 transition-colors uppercase tracking-widest">
+                                <a href="#" 
+                                    class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 group-hover:text-red-500 transition-colors uppercase tracking-widest demo-trigger">
                                     Více info <i data-lucide="chevron-down" width="14" class="-rotate-90"></i>
                                 </a>
                             </div>
@@ -300,7 +336,7 @@
                     <div
                         class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col">
                         <div class="relative h-48 overflow-hidden">
-                            <img src="https://picsum.photos/seed/service/600/400" alt="Servis"
+                            <img src="img/zamecnictvi/6.jpg" alt="Servis"
                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
@@ -312,8 +348,8 @@
                                 Zámečnický servis
                             </h3>
                             <div class="mt-auto">
-                                <a href="#"
-                                    class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 group-hover:text-red-500 transition-colors uppercase tracking-widest">
+                                <a href="#" 
+                                    class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 group-hover:text-red-500 transition-colors uppercase tracking-widest demo-trigger">
                                     Více info <i data-lucide="chevron-down" width="14" class="-rotate-90"></i>
                                 </a>
                             </div>
@@ -323,7 +359,7 @@
                     <div
                         class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col">
                         <div class="relative h-48 overflow-hidden">
-                            <img src="https://picsum.photos/seed/tips/600/400" alt="Tipy"
+                            <img src="img/zamecnictvi/7.jpg" alt="Tipy"
                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
@@ -336,7 +372,7 @@
                             </h3>
                             <div class="mt-auto">
                                 <a href="#"
-                                    class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 group-hover:text-red-500 transition-colors uppercase tracking-widest">
+                                    class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 group-hover:text-red-500 transition-colors uppercase tracking-widest demo-trigger">
                                     Více info <i data-lucide="chevron-down" width="14" class="-rotate-90"></i>
                                 </a>
                             </div>
@@ -346,7 +382,7 @@
                     <div
                         class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col">
                         <div class="relative h-48 overflow-hidden">
-                            <img src="https://picsum.photos/seed/news/600/400" alt="Aktuality"
+                            <img src="img/zamecnictvi/8.jpg" alt="Aktuality"
                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
@@ -359,7 +395,7 @@
                             </h3>
                             <div class="mt-auto">
                                 <a href="#"
-                                    class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 group-hover:text-red-500 transition-colors uppercase tracking-widest">
+                                    class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 group-hover:text-red-500 transition-colors uppercase tracking-widest demo-trigger">
                                     Více info <i data-lucide="chevron-down" width="14" class="-rotate-90"></i>
                                 </a>
                             </div>
@@ -609,7 +645,7 @@
                                 minut.</p>
                             <a href="tel:606588222"
                                 class="flex items-center justify-center gap-4 bg-red-600 text-white text-2xl font-black py-4 rounded-2xl hover:bg-red-700 transition-all">
-                                <i data-lucide="phone"></i> 606 588 222
+                                <i data-lucide="phone"></i> 987 654 321
                             </a>
                         </div>
                     </div>
@@ -707,21 +743,20 @@
                             <p class="text-blue-300 uppercase text-xs tracking-widest font-black mb-4">Centrální
                                 dispečink</p>
                             <a href="tel:606588222"
-                                class="text-3xl font-black block mb-4 hover:text-red-400 transition-colors">606 588
-                                222</a>
+                                class="text-3xl font-black block mb-4 hover:text-red-400 transition-colors">987 654
+                                321</a>
                             <p class="text-sm opacity-60">Volejte kdykoliv - 24h denně, 7 dní v týdnu.</p>
                         </div>
                     </div>
                     <div class="lg:col-span-7 h-[500px] rounded-[3rem] overflow-hidden shadow-2xl relative">
 
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2561.860968435211!2d14.533904576899088!3d50.051435716012996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b9263e3b360c7%3A0x5ab7dee7382dbe3!2sZ%C3%A1me%C4%8Dnick%C3%A1%20Pohotovost%20Praha%20NONSTOP!5e0!3m2!1scs!2scz!4v1766238349557!5m2!1scs!2scz"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d163930.3733266911!2d14.300878827807129!3d50.0598438050773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b939c0970798b%3A0x400af0f66164090!2sPraha!5e0!3m2!1scs!2scz!4v1767009520827!5m2!1scs!2scz"
                             class="w-full h-full border-0" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
 
                         <div class="absolute inset-0 bg-blue-900/10 pointer-events-none"></div>
-
                     </div>
                 </div>
             </div>
@@ -772,9 +807,8 @@
                 <div>
                     <h4 class="font-bold text-xl mb-6">Sídlo</h4>
                     <address class="not-italic text-gray-400 text-sm space-y-2">
-                        <p>Herbenova 727/38</p>
-                        <p>Praha 10, 102 00</p>
-                        <p class="pt-4">IČO: 24734691</p>
+                        <p>Praha</p>
+                        <p class="pt-4">IČO: 87654321</p>
                     </address>
                 </div>
 
@@ -783,11 +817,11 @@
                     <div class="space-y-4">
                         <a href="tel:+420606588222"
                             class="flex items-center gap-3 font-bold text-xl text-red-500 hover:text-red-400">
-                            <i data-lucide="phone" width="20"></i> 606 588 222
+                            <i data-lucide="phone" width="20"></i> 987 654 321
                         </a>
                         <a href="mailto:and.husak@seznam.cz"
                             class="flex items-center gap-3 text-sm text-gray-400 hover:text-white">
-                            <i data-lucide="archive" width="16"></i> and.husak@seznam.cz
+                            <i data-lucide="archive" width="16"></i> someone@example.cz
                         </a>
                     </div>
                 </div>
@@ -798,7 +832,7 @@
                 <p id="copyright">© 2025 Lukáš Lejsek všechna práva vyhrazena</p>
                 <div class="flex gap-6">
                     <a href="#" class="hover:text-white">Ochrana osobních údajů</a>
-                    <a href="#" class="hover:text-white">Web by Lukáš Lejsek</a>
+                    <a href="mailto:luky.lejsek07@gmail.com" class="hover:text-white">Web by Lukáš Lejsek</a>
                 </div>
             </div>
         </div>
@@ -820,7 +854,7 @@
         lucide.createIcons();
 
         // --- 2. Update Copyright Year ---
-        document.getElementById('copyright').innerHTML = `© ${new Date().getFullYear()} Zámečnictví Praha NONSTOP. Všechna práva vyhrazena.`;
+        document.getElementById('copyright').innerHTML = `© ${new Date().getFullYear()} Lukáš Lejsek. Všechna práva vyhrazena.`;
 
         // --- 3. Navbar Scroll Effect ---
         const navbar = document.getElementById('navbar');
@@ -922,6 +956,40 @@
                     }
                 });
             });
+        });
+
+
+
+
+
+        //popup window
+        // 1. Najdeme všechny spouštěče
+        const triggers = document.querySelectorAll('.demo-trigger');
+        const popup = document.getElementById('demo-popup');
+
+        // 2. Projdeme každý spouštěč jeden po druhém (pomocí cyklu forEach)
+        triggers.forEach(function (element) {
+            element.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // Skrolujeme nahoru
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+
+                // Ukážeme popup
+                popup.classList.add('is-visible');
+
+                // Po 5 sekundách schováme
+                setTimeout(function () {
+                    popup.classList.remove('is-visible');
+                }, 5000);
+            });
+        });
+
+        popup.addEventListener('click', function () {
+            this.classList.remove('is-visible');
         });
 
     </script>
